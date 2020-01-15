@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Odontograma example</title>
+        <style>
+                 canvas {
+                    border: solid black 5px;
+                    border-radius: 16px;
+                }
+        </style>
+    </head>
+    <body onload="draw();">
+         <canvas id="canvas" width="800" height="800"></canvas>  
+
+
+         <script>
+             function draw() {
+                var canvas = document.getElementById("canvas");
+                var ctx = canvas.getContext("2d");
+                var x = 60;
+                var y = 60;
+                var radio= 40;
+                ctx.fillStyle = "black";
+                ctx.beginPath();
+                ctx.arc(x, y, radio, 0, radians(360));
+                ctx.fill();
+                
+                ctx.fillStyle = "blue";
+                ctx.beginPath();
+                   
+                cantidad = 4;
+                var fraccion = 360 / cantidad;
+                var grados = fraccion * 1;
+                ctx.moveTo(x, y);
+                ctx.arc(x, y, radio-2, radians(grados), radians(grados + fraccion));                    
+                //ctx.arc(60, 60, 40, radians(1), radians(grados + fraccion));
+                ctx.fill(); 
+      
+              
+                
+                
+                /*  ctx.fillStyle = "black";
+                    ctx.beginPath();
+                    ctx.arc(250,130,25,0,Math.PI*2,true);
+                    ctx.fill();*/
+                }
+
+
+
+                
+                function radians(grados){
+                    return grados * Math.PI / 180;
+                }
+
+
+
+                function rand_range(min, max){
+                    return Math.floor((Math.random() * max) + min);
+                }
+         </script>
+    </body>
+
+</html>
