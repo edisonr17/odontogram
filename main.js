@@ -137,3 +137,4 @@
        var teeths = new teeth();
        teeths.drawTeeth(200,200);
        teeths.drawTeeth(400,200);
+       teeths.drawTeeth(200,200);
