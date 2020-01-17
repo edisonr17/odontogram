@@ -1,0 +1,17 @@
+{
+  "name": "odontogram",
+  "version": "1.0.0",
+  "description": "Version 1 del odontograma",
+  "main": "main.js",
+  "scripts": {
+    "test": "testOd"
+  },
+  "keywords": [
+    "odontograma"
+  ],
+  "author": "Edison Rave",
+  "license": "ISC",
+  "dependencies": {
+    "konva": "^4.1.2"
+  }
+}
