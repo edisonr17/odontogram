@@ -3,7 +3,7 @@
 class teeth {
   stage = new Konva.Stage({
     container: 'container',
-    width: 900,
+    width: 1000,
     height: 600
   });
   layer = new Konva.Layer();
@@ -126,11 +126,11 @@ class teeth {
 
 var teeths = new teeth();
 
-adultOdontogram(900, 600, teeths);
+adultOdontogram(1024, 600, teeths);
 
 function adultOdontogram(middleX, middleY, TeethInstance) {
-  var anchoCuadrante1 = middleX / 2;
-  var altoCuadrante1 = middleY / 4;
+  var anchoCuadrante1 = middleX*.8 / 2;
+  var altoCuadrante1 = middleY*.8 / 4;
 
   for (var k = 1; k < 9; k++) {
     TeethInstance.drawTeeth((anchoCuadrante1 / 8 * k) - ((anchoCuadrante1 / 8) * 0.5), altoCuadrante1 / 2);
@@ -150,11 +150,11 @@ function adultOdontogram(middleX, middleY, TeethInstance) {
 }
 
 
-boyOdontogram(900, 600, teeths);
+boyOdontogram(1024, 600, teeths);
 
 function boyOdontogram(middleX, middleY, TeethInstance) {
-  var anchoCuadrante1 = middleX / 2;
-  var altoCuadrante1 = middleY / 2;
+  var anchoCuadrante1 = middleX*.8 / 2;
+  var altoCuadrante1 = middleY*.8 / 2;
 
   for (var k = 1; k < 9; k++) {
     if (k > 3) {
@@ -180,4 +180,12 @@ function boyOdontogram(middleX, middleY, TeethInstance) {
     }
   }
 
+}
+
+
+class tools
+{
+  showTools(){
+
+  }
 }
