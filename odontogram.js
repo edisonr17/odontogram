@@ -1,6 +1,8 @@
+
+
 class odontogram extends teeth {
 
- 
+    
 
     drawDivs(xmax, ymax) {
   
@@ -52,9 +54,14 @@ class odontogram extends teeth {
         var anchoOdontogram = xmax * .85 / 2;
         var altoOdontogram = ymax / 2;
         this.drawCuadrant(xmax, ymax,  1, 0, anchoOdontogram, altoOdontogram);
+        this.drawCuadrantTitle(0+10, ymax/2+10 , 'I - Odontograma de Niño');
         this.drawCuadrant(xmax, ymax,  2, 0, anchoOdontogram, altoOdontogram);
+        this.drawCuadrantTitle(xmax*.85/2 + 10, ymax/2+10 , 'II');
         this.drawCuadrant(xmax, ymax,  3, 0, anchoOdontogram, altoOdontogram);
+        this.drawCuadrantTitle(0+10,  ymax/4 +ymax/2 +10 , 'IV');
         this.drawCuadrant(xmax, ymax,  4, 0, anchoOdontogram, altoOdontogram);
+        this.drawCuadrantTitle(xmax*.85/2 +10  , ymax/4 +ymax/2 +10 , 'III');
+
         
 
     }
@@ -67,26 +74,50 @@ class odontogram extends teeth {
         var altoOdontogram = ymax / 4;
 
         this.drawCuadrant(xmax, ymax,  1, 1, anchoOdontogram, altoOdontogram);
-        this.drawCuadrantTitle(0+10, 0+10 , 'I');
+        this.drawCuadrantTitle(0+10, 0+10 , 'I - Odontograma Adulto');
         this.drawCuadrant(xmax * .85 / 2, ymax,  2, 1, anchoOdontogram, altoOdontogram);
         this.drawCuadrantTitle(xmax*.85/2 + 10, 0+10 , 'II');
         this.drawCuadrant(xmax, ymax,  3, 1, anchoOdontogram, altoOdontogram);
         this.drawCuadrantTitle(0 + 10, ymax/4+10 , 'IV');
         this.drawCuadrant(xmax, ymax,  4, 1, anchoOdontogram, altoOdontogram);
-        this.drawCuadrantTitle(xmax*.85/2 + 10 + 10, ymax/4+10 , 'III');
+        this.drawCuadrantTitle(xmax*.85/2 + 10 , ymax/4+10 , 'III');
     }
 
     drawCuadrantTitle(x, y, cuadrant)
     {
         var cuadrantTitle = new Konva.Text({
-            x: x,
+            x: x + 15,
             y: y,
             text: cuadrant,
-            fontSize: 25,
+            fontSize: 15,
             fontFamily: 'Calibri',
             fill: 'black'
           });
+
+          var check = new Konva.Rect({
+            x: x ,
+            y: y,
+            width: 10,
+            height: 10,
+            fill: 'white',
+            stroke: 'black',
+            strokeWidth: 1
+          });
+          
+          check.on("mouseover",function(){
+           document.getElementById("contenedor").style.cursor = 'pointer';
+          });
+
+          check.on("mouseleave",function(){
+           
+            document.getElementById("contenedor").style.cursor = 'default';
+         
+           });
+ 
+
           this.layer.add(cuadrantTitle);
+          this.layer.add(check);
+
     }
 
     drawCuadrant(xmax, ymax,quadrant, type, anchoCuadrante1, altoCuadrante1) {

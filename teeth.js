@@ -53,6 +53,8 @@ class teeth {
       center.on('mouseover', function () {
         this.stroke("green");
         this.fill("#F3F781");
+        document.getElementById("contenedor").style.cursor = 'pointer';
+
         this.draw();
       });
   
@@ -60,6 +62,8 @@ class teeth {
         this.stroke("black");
         this.fill("white");
         this.draw();
+        document.getElementById("contenedor").style.cursor = 'default';
+
       });
       return center;
   
@@ -82,12 +86,15 @@ class teeth {
         this.stroke("green");
         this.fill("white");
         this.draw();
+        document.getElementById("contenedor").style.cursor = 'pointer';
       });
   
       face.on('mouseleave', function () {
         this.stroke("black");
         this.fill(color);
         this.draw();
+        document.getElementById("contenedor").style.cursor = 'default';
+
       });
   
       return face;
@@ -110,12 +117,15 @@ class teeth {
         this.stroke("yellow");
         this.fill("yellow");
         this.draw();
+        document.getElementById("contenedor").style.cursor = 'pointer';
       });
   
       center.on('mouseleave', function () {
         this.stroke("black");
         this.fill("black");
         this.draw();
+        document.getElementById("contenedor").style.cursor = 'default';
+
       });
   
       return center;
