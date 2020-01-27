@@ -5,6 +5,8 @@ class teeth {
     height: 600
   });
   layer = new Konva.Layer();
+
+
   constructor() {
 
 
@@ -81,11 +83,21 @@ class teeth {
       strokeWidth: 1.5
     });
 
+ 
+
     face.on('mouseover', function () {
       this.stroke("green");
-      this.fill("white");
-      this.draw();
+     // this.fill("green");
       document.getElementById("contenedor").style.cursor = 'pointer';
+      var background = new Image();
+      background.onload = function() {
+        face.fillPatternImage(background);
+      };
+      background.src = 'https://cdn.pixabay.com/photo/2016/03/28/09/22/blue-image-1285095_960_720.png';
+     
+
+      this.draw();
+
     });
 
     face.on('mouseleave', function () {

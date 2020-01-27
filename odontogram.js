@@ -1,6 +1,6 @@
 class odontogram extends teeth {
 
-
+    
 
     drawDivs(xmax, ymax) {
 
@@ -51,75 +51,104 @@ class odontogram extends teeth {
                 id: 1,
                 name: "Caries",
                 fullTeeth: false,
-                src: "./resources/symbols/caries.png"
+                src: "./resources/symbols/caries.png",
+                tittle:"Simbolo 1"               
             },
             {
                 id: 2,
                 name: "Fractura",
                 fullTeeth: false,
-                src: "./resources/symbols/caries2.png"
+                src: "./resources/symbols/caries2.png",
+                tittle:"Simbolo 1"               
             },
             {
                 id: 3,
                 name: "Sellante",
                 fullTeeth: false,
-                src: "./resources/symbols/caries3.png"
+                src: "./resources/symbols/caries3.png",
+                tittle:"Simbolo 1"               
             },
             {
                 id: 4,
                 name: "Caries",
                 fullTeeth: false,
-                src: "./resources/symbols/caries.png"
+                src: "./resources/symbols/toolsExample.png",
+                tittle:"Simbolo 1"               
             },
             {
                 id: 5,
                 name: "Fractura",
                 fullTeeth: false,
-                src: "./resources/symbols/caries2.png"
+                src: "./resources/symbols/implante.png",
+                tittle:"Simbolo 1"               
             },
             {
                 id: 6,
-                name: "Sellante",
+                name: "poroso",
                 fullTeeth: false,
-                src: "./resources/symbols/caries3.png"
+                src: "./resources/symbols/fractura.png",
+                tittle:"Simbolo 1"               
             }
         ];
     }
-    drawForExample() {
-        var layer = this.layer;
-        var stage =this.stage;
-        var symbols = this.getSymbols();
-        var images = [];
-        for (var i = 0; i < 4; i++) {
-            var nextposition = i * 20 + 100;
-            images[i] = this.getItemTool(1,1, symbols[i].src);
-          
-        }
-    }
-
-
-    getItemTool(x,y, src){
+  
+  
+    getItemTool(x,y, symbol,  position){
+        var widthIcon = 35;
+        var heightIcon =35;
         var imageObj = new Image();
         var layer = this.layer;
         var stage =this.stage;
         imageObj.onload = function () {
-            var yoda = new Konva.Image({
+            var tool = new Konva.Image({
                 x: x,
                 y: y,
                 image: imageObj,
-                width: 35,
-                height: 31,
-                draggable: true,
-                name: "yoda" 
+                width: widthIcon,
+                fill: "pink",
+                stroke: "pink",
+                height: heightIcon,
+                draggable: false,
+                name: "tools"+position,
+               
+             /*   shadowColor: 'black',
+                shadowBlur: 0,
+                shadowOffset: { x: 1, y: 3 },*/
+                tittle: symbol.tittle,
+                
             });
             // add the shape to the layer
             //group.add(yoda);
+            tool.on('mouseleave', function (evt) {
+                this.stroke("pink");
+                this.scaleX(1);
+                this.scaleY(1);
+                this.draw();
+                document.getElementById("contenedor").style.cursor = 'default';
+          
+              });
+              tool.on('mouseover', function (evt) {
+                this.stroke("black");
+                this.scaleX(1.03);
+                this.scaleY(1.03);
+              
+                document.getElementById("contenedor").style.cursor = 'pointer';
+               
+                this.draw();
 
-            layer.add(yoda);
+
+              });
+
+              var fillPatternImage = tool.fillPatternImage();
+
+                
+               
+
+            layer.add(tool);
             // add the layer to the stage
             stage.add(layer);
         };
-        imageObj.src = src;
+        imageObj.src = symbol.src;
         return imageObj;
     }
 
@@ -141,21 +170,68 @@ class odontogram extends teeth {
         var layer = this.layer;
         var stage = this.stage;
         var images = [];
-        var xinitialCalculated = xinitial;
-        var yinitialCalculated = yinitial;
+        yinitial = yinitial + 20;
+        xinitial = xinitial ;
+        var xinitialCalculated = xinitial ;
+        var yinitialCalculated = yinitial ;
+
+        for (var location = 0; location < symbolsCount ; location++) {
 
 
-        for (var i = 0; i < symbolsCount; i++) {
-            //Si la columna actual es menor que el numero de columnas maximo
-            if(columnaActual < columns)
-            {
-                images[i] = this.getItemTool(1,1, symbols[i].src);
+            if(columnaActual < columns )
+            {       
+             
+                if(columnaActual == 1 )
+                {
+                    xinitialCalculated = xinitial;
+                    console.log("entro");
+
+                }
+               
+                   
+
+          
+                images[location] = this.getItemTool(xinitialCalculated, yinitialCalculated, symbols[location], location);
+                xinitialCalculated = xinitialCalculated+longColumn * .8;
+                columnaActual = columnaActual + 1;
             }
             else
             {
-                
+
+                images[location] = this.getItemTool(xinitialCalculated, yinitialCalculated, symbols[location], location);
+
+                yinitialCalculated = yinitialCalculated + longColumn; 
+                columnaActual = 1;
+
             }
 
+           
+            //Si la columna actual es menor que el numero de columnas maximo
+            /*if(columnaActual <= columns)
+            {
+                if(columnaActual > 1 )
+                {
+                   
+                    xinitialCalculated = xinitialCalculated+longColumn;
+                   
+                }
+                else
+                {   
+                    xinitialCalculated = xinitial;
+                    
+                }
+                columnaActual = columnaActual + 1;
+                images[i] = this.getItemTool(xinitialCalculated, yinitialCalculated, symbols[i].src);
+            }
+            else
+            {
+                filaActual = filaActual+1;
+                yinitialCalculated = yinitialCalculated + longColumn; 
+                xinitialCalculated = xinitial;
+                columnaActual = 1;
+                images[i] = this.getItemTool(xinitialCalculated, yinitialCalculated, symbols[i].src);
+            }
+*/
            
 
 
