@@ -77,34 +77,58 @@ class teeth {
       innerRadius: 8,
       outerRadius: 18,
       angle: angle,
-      fill: color,
+     // fill: color,
       stroke: 'black',
       rotation: rotation,
-      strokeWidth: 1.5
+      strokeWidth: 1.5,
+   //   fillPatternImage: background
     });
 
  
+    var background = new Image();
+    background.onload = function() {
+      console.log(face);
+      
+     // face.fillPatternImage(background);
+   
+    };
+
+   var click = false;
 
     face.on('mouseover', function () {
-      this.stroke("green");
-     // this.fill("green");
+      background.src ="./resources/symbols/cariesIcon.png";
+      this.fill("");
+      this.fillPatternImage(background);
+     // console.log(background);
       document.getElementById("contenedor").style.cursor = 'pointer';
-      var background = new Image();
-      background.onload = function() {
-        face.fillPatternImage(background);
-      };
-      background.src = 'https://cdn.pixabay.com/photo/2016/03/28/09/22/blue-image-1285095_960_720.png';
-     
+      background.src ="./resources/symbols/cariesIcon.png";
 
+
+      this.draw();
+
+    });
+
+    face.on('click', function () {
+      background.src ="./resources/symbols/cariesIcon.png";
+      this.fill("");
+      this.fillPatternImage(background);
+     // console.log(background);
+      document.getElementById("contenedor").style.cursor = 'pointer';
+      background.src ="./resources/symbols/cariesIcon.png";
+      click = true;
       this.draw();
 
     });
 
     face.on('mouseleave', function () {
-      this.stroke("black");
-      this.fill(color);
+    if(click == false)
+    {
+      this.fillPatternImage();
+      this.fill("white");
       this.draw();
       document.getElementById("contenedor").style.cursor = 'default';
+    }
+    
 
     });
 
