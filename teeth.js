@@ -51,6 +51,9 @@ class teeth {
   }
 
   drawCenter(x, y) {
+    var click = false;
+
+    var teethInstance = this;
     var center = new Konva.Circle({
       x: x,
       y: y,
@@ -61,20 +64,35 @@ class teeth {
     });
 
     center.on('mouseover', function () {
-      this.stroke("green");
-      this.fill("#F3F781");
-      document.getElementById("contenedor").style.cursor = 'pointer';
+      background.src =teethInstance.getCurrentBackground();
 
+     
+      background.src =teethInstance.getCurrentBackground();
+      this.fill("");
+      this.fillPatternImage(background);
       this.draw();
     });
 
     center.on('mouseleave', function () {
-      this.stroke("black");
-      this.fill("white");
+    if(click == false)
+    {
+      this.fillPatternImage();
+
       this.draw();
+
       document.getElementById("contenedor").style.cursor = 'default';
+    }
+    
 
     });
+
+    var background = new Image();
+    background.onload = function() {
+      console.log(center);
+      
+     // face.fillPatternImage(background);
+   
+    };
     return center;
 
   }
@@ -87,7 +105,7 @@ class teeth {
       innerRadius: 8,
       outerRadius: 18,
       angle: angle,
-     // fill: color,
+      fill: color,
       stroke: 'black',
       rotation: rotation,
       strokeWidth: 1.5,
@@ -107,6 +125,7 @@ class teeth {
 
     face.on('mouseover', function () {
       console.log(teethInstance.getCurrentBackground());
+
       background.src =teethInstance.getCurrentBackground();
       this.fill("");
       this.fillPatternImage(background);
@@ -120,8 +139,7 @@ class teeth {
     });
 
     face.on('click', function () {
-      background.src = teethInstance.getCurrentBackground();
-      console.log(teethInstance.getCurrentBackground());
+    
       this.fill("");
       this.fillPatternImage(background);
      // console.log(background);
@@ -137,7 +155,9 @@ class teeth {
     {
       this.fillPatternImage();
       this.fill("white");
+
       this.draw();
+
       document.getElementById("contenedor").style.cursor = 'default';
     }
     

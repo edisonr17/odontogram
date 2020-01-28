@@ -1,6 +1,9 @@
 class odontogram extends teeth {
 
-    
+    /*Esta funcion divide el plano del odontograma
+    * @param xmax tamaño maximo en x
+    * @param ymax tamaño maximo en y
+    */  
 
     drawDivs(xmax, ymax) {
 
@@ -46,6 +49,10 @@ class odontogram extends teeth {
         this.layer.draw();
     }
 
+    /**
+    * Este método retorna un array de simbolos que funcionarán de herramientas en el odontograma 
+    */
+
     getSymbols() {
         return [{
                 id: 1,
@@ -61,7 +68,7 @@ class odontogram extends teeth {
                 fullTeeth: false,
                 src: "./resources/symbols/caries2.png",
                 srcIcon: "./resources/symbols/caries2Icon.png",
-                tittle:"Simbolo 1"               
+                tittle:"Fractura 1"               
             },
             {
                 id: 3,
@@ -69,7 +76,7 @@ class odontogram extends teeth {
                 fullTeeth: false,
                 src: "./resources/symbols/caries3.png",
                 srcIcon: "./resources/symbols/caries3Icon.png",
-                tittle:"Simbolo 1"               
+                tittle:"Sellante 1"               
             },
             {
                 id: 4,
@@ -77,7 +84,7 @@ class odontogram extends teeth {
                 fullTeeth: false,
                 src: "./resources/symbols/toolsExample.png",
                 srcIcon: "./resources/symbols/toolsExampleIcon.png",
-                tittle:"Simbolo 1"               
+                tittle:"Caries 2"               
             },
             {
                 id: 5,
@@ -86,20 +93,27 @@ class odontogram extends teeth {
                 src: "./resources/symbols/implante.png",
                 srcIcon: "./resources/symbols/implanteIcon.png",
 
-                tittle:"Simbolo 1"               
+                tittle:"Fractura de otro tipo 3"               
             },
             {
                 id: 6,
                 name: "poroso",
                 fullTeeth: false,
                 src: "./resources/symbols/fractura.png",
-                srcIcon: "./resources/symbols/fractura.png",
-                tittle:"Simbolo 1"               
+                srcIcon: "./resources/symbols/fracturaIcon.png",
+                tittle:"Poroso 4"               
             }
         ];
     }
   
-  
+    /** 
+     * trae la configuración grafica del simbolo
+     * @param x coordenada en x inicial
+     * @param y coordenada en y inicial
+     * @param symbol nodo del objeto con los datos de configuracion del simbolo.
+     * @param position es el número del bucle que construye el cuadro de herramientas.
+     * 
+    */
     getItemTool(x,y, symbol,  position){
         var widthIcon = 35;
         var heightIcon =35;
@@ -113,8 +127,9 @@ class odontogram extends teeth {
                 y: y,
                 image: imageObj,
                 width: widthIcon,
-                fill: "pink",
-                stroke: "pink",
+                fill: "blue",
+                stroke: "blue",
+                
                 height: heightIcon,
                 draggable: false,
                 name: "tools"+position,
@@ -128,7 +143,7 @@ class odontogram extends teeth {
             // add the shape to the layer
             //group.add(yoda);
             tool.on('mouseleave', function (evt) {
-                this.stroke("pink");
+                this.stroke("blue");
                 this.scaleX(1);
                 this.scaleY(1);
                 this.draw();
@@ -139,7 +154,7 @@ class odontogram extends teeth {
                 this.stroke("black");
                 this.scaleX(1.03);
                 this.scaleY(1.03);
-              
+                toolsInstance.setTittle(symbol.tittle);
                 document.getElementById("contenedor").style.cursor = 'pointer';
                
                 this.draw();
@@ -152,7 +167,7 @@ class odontogram extends teeth {
                 this.stroke("black");
                 this.scaleX(1.03);
                 this.scaleY(1.03);
-              
+                
                 document.getElementById("contenedor").style.cursor = 'pointer';
                
                 this.draw();
@@ -171,12 +186,31 @@ class odontogram extends teeth {
         return imageObj;
     }
 
-
+    tittle = null;
 
 
     drawTools(xinitial, yinitial, xmax, ymax, columns) {
         //cargamos array de simbolos
         var symbols = this.getSymbols();
+        this.tittle = new Konva.Text({
+            x: xinitial,
+            y: yinitial-20,
+            
+            width: 300,
+            stroke: 'black',
+            strokeWidth: 1,
+            fill: 'blue',
+            fontSize: 17,
+            cornerRadius: 1,
+            shadowColor: 'black',
+            shadowBlur: 0,
+            shadowOffsetX: 1,
+            shadowOffsetY: 1,
+            shadowOpacity: 0.2,
+          });
+         
+
+        this.layer.add(this.tittle);
         //Contamos cuantos simbolos hay
         var symbolsCount = symbols.length;
         //calculamos la distancia en x en el que vamos a dibujar las herramientas
@@ -240,7 +274,7 @@ class odontogram extends teeth {
 
 
 
-
+        
 
 
 
@@ -249,22 +283,31 @@ class odontogram extends teeth {
 
     }
 
+     
+    
 
 
 
+    getTittle(){
+        return this.tittle;
+    }
+
+    setTittle(message) {
+        this.tittle.text(message);
+        this.layer.draw();
+    }
 
 
-
-    boyOdontogram(xmax, ymax) {
+    boyOdontogram(xinitial, yinitial, xmax, ymax) {
         var anchoOdontogram = xmax * .85 / 2;
         var altoOdontogram = ymax / 2;
-        this.drawCuadrant(xmax, ymax, 1, 0, anchoOdontogram, altoOdontogram);
+        this.drawCuadrant(xmax, ymax, 1, yinitial, anchoOdontogram, altoOdontogram);
         this.drawCuadrantTitle(0 + 10, ymax / 2 + 10, 'I - Odontograma de Niño');
-        this.drawCuadrant(xmax, ymax, 2, 0, anchoOdontogram, altoOdontogram);
+        this.drawCuadrant(xmax, ymax, 2, yinitial, anchoOdontogram, altoOdontogram);
         this.drawCuadrantTitle(xmax * .85 / 2 + 10, ymax / 2 + 10, 'II');
-        this.drawCuadrant(xmax, ymax, 3, 0, anchoOdontogram, altoOdontogram);
+        this.drawCuadrant(xmax, ymax, 3, yinitial, anchoOdontogram, altoOdontogram);
         this.drawCuadrantTitle(0 + 10, ymax / 4 + ymax / 2 + 10, 'IV');
-        this.drawCuadrant(xmax, ymax, 4, 0, anchoOdontogram, altoOdontogram);
+        this.drawCuadrant(xmax, ymax, 4, yinitial, anchoOdontogram, altoOdontogram);
         this.drawCuadrantTitle(xmax * .85 / 2 + 10, ymax / 4 + ymax / 2 + 10, 'III');
 
 
@@ -274,7 +317,7 @@ class odontogram extends teeth {
 
 
 
-    adultOdontogram(xmax, ymax) {
+    adultOdontogram(xinitial, yinitial, xmax, ymax) {
         var anchoOdontogram = xmax * .85 / 2;
         var altoOdontogram = ymax / 4;
 
