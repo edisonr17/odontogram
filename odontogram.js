@@ -52,6 +52,7 @@ class odontogram extends teeth {
                 name: "Caries",
                 fullTeeth: false,
                 src: "./resources/symbols/caries.png",
+                srcIcon: "./resources/symbols/cariesIcon.png",
                 tittle:"Simbolo 1"               
             },
             {
@@ -59,6 +60,7 @@ class odontogram extends teeth {
                 name: "Fractura",
                 fullTeeth: false,
                 src: "./resources/symbols/caries2.png",
+                srcIcon: "./resources/symbols/caries2Icon.png",
                 tittle:"Simbolo 1"               
             },
             {
@@ -66,6 +68,7 @@ class odontogram extends teeth {
                 name: "Sellante",
                 fullTeeth: false,
                 src: "./resources/symbols/caries3.png",
+                srcIcon: "./resources/symbols/caries3Icon.png",
                 tittle:"Simbolo 1"               
             },
             {
@@ -73,6 +76,7 @@ class odontogram extends teeth {
                 name: "Caries",
                 fullTeeth: false,
                 src: "./resources/symbols/toolsExample.png",
+                srcIcon: "./resources/symbols/toolsExampleIcon.png",
                 tittle:"Simbolo 1"               
             },
             {
@@ -80,6 +84,8 @@ class odontogram extends teeth {
                 name: "Fractura",
                 fullTeeth: false,
                 src: "./resources/symbols/implante.png",
+                srcIcon: "./resources/symbols/implanteIcon.png",
+
                 tittle:"Simbolo 1"               
             },
             {
@@ -87,6 +93,7 @@ class odontogram extends teeth {
                 name: "poroso",
                 fullTeeth: false,
                 src: "./resources/symbols/fractura.png",
+                srcIcon: "./resources/symbols/fractura.png",
                 tittle:"Simbolo 1"               
             }
         ];
@@ -99,6 +106,7 @@ class odontogram extends teeth {
         var imageObj = new Image();
         var layer = this.layer;
         var stage =this.stage;
+        var toolsInstance = this;
         imageObj.onload = function () {
             var tool = new Konva.Image({
                 x: x,
@@ -137,6 +145,17 @@ class odontogram extends teeth {
                 this.draw();
 
 
+              });
+
+              tool.on('click', function (evt) {
+                toolsInstance.setCurrentBackground(symbol.srcIcon);
+                this.stroke("black");
+                this.scaleX(1.03);
+                this.scaleY(1.03);
+              
+                document.getElementById("contenedor").style.cursor = 'pointer';
+               
+                this.draw();
               });
 
               var fillPatternImage = tool.fillPatternImage();
@@ -206,33 +225,7 @@ class odontogram extends teeth {
             }
 
            
-            //Si la columna actual es menor que el numero de columnas maximo
-            /*if(columnaActual <= columns)
-            {
-                if(columnaActual > 1 )
-                {
-                   
-                    xinitialCalculated = xinitialCalculated+longColumn;
-                   
-                }
-                else
-                {   
-                    xinitialCalculated = xinitial;
-                    
-                }
-                columnaActual = columnaActual + 1;
-                images[i] = this.getItemTool(xinitialCalculated, yinitialCalculated, symbols[i].src);
-            }
-            else
-            {
-                filaActual = filaActual+1;
-                yinitialCalculated = yinitialCalculated + longColumn; 
-                xinitialCalculated = xinitial;
-                columnaActual = 1;
-                images[i] = this.getItemTool(xinitialCalculated, yinitialCalculated, symbols[i].src);
-            }
-*/
-           
+ 
 
 
             

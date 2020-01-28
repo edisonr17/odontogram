@@ -5,7 +5,7 @@ class teeth {
     height: 600
   });
   layer = new Konva.Layer();
-
+  currentBackground = "./resources/symbols/implante.png";
 
   constructor() {
 
@@ -41,6 +41,15 @@ class teeth {
 
   }
 
+  setCurrentBackground  (src){
+    this.currentBackground = src;
+    console.log(this.currentBackground);
+  }
+
+  getCurrentBackground(){
+    return this.currentBackground;
+  }
+
   drawCenter(x, y) {
     var center = new Konva.Circle({
       x: x,
@@ -71,6 +80,7 @@ class teeth {
   }
 
   drawFace(rotation, angle, stage, layer, x, y, color) {
+    var teethInstance = this;
     let face = new Konva.Arc({
       x: x,
       y: y,
@@ -96,12 +106,13 @@ class teeth {
    var click = false;
 
     face.on('mouseover', function () {
-      background.src ="./resources/symbols/cariesIcon.png";
+      console.log(teethInstance.getCurrentBackground());
+      background.src =teethInstance.getCurrentBackground();
       this.fill("");
       this.fillPatternImage(background);
      // console.log(background);
       document.getElementById("contenedor").style.cursor = 'pointer';
-      background.src ="./resources/symbols/cariesIcon.png";
+     
 
 
       this.draw();
@@ -109,12 +120,13 @@ class teeth {
     });
 
     face.on('click', function () {
-      background.src ="./resources/symbols/cariesIcon.png";
+      background.src = teethInstance.getCurrentBackground();
+      console.log(teethInstance.getCurrentBackground());
       this.fill("");
       this.fillPatternImage(background);
      // console.log(background);
       document.getElementById("contenedor").style.cursor = 'pointer';
-      background.src ="./resources/symbols/cariesIcon.png";
+      background.src =teethInstance.getCurrentBackground();
       click = true;
       this.draw();
 
