@@ -53,7 +53,16 @@ class teeth {
     console.log(this.currentBackground);
   }
 
+  symbol = null;
+  setCurrentSymbol(symbol){
+    this.symbol = symbol;
+  }
   
+  getCurrentSymbol()
+  {
+    return this.symbol;
+  }
+
   getCurrentBackground() {
     return this.currentBackground;
   }
@@ -76,9 +85,9 @@ class teeth {
       strokeWidth: 1
     });
     var background = this.getInstanceImageBackground(this.getCurrentBackground());
-   
+    var symbol = this.getCurrentSymbol();
     center.on('mouseover', function () {
-      if (click == false) {
+      if (click == false ) {
         console.log(teethInstance.getCurrentBackground());
         background.src = teethInstance.getCurrentBackground();
         this.fill("");
@@ -132,15 +141,13 @@ class teeth {
 
 
     var background = this.getInstanceImageBackground();
-
-
+    
 
 
     var click = false;
 
     face.on('mouseover', function () {
       if (click == false) {
-        console.log(teethInstance.getCurrentBackground());
 
         background.src = teethInstance.getCurrentBackground();
         this.fill("");
@@ -156,7 +163,9 @@ class teeth {
     });
 
     face.on('click', function () {
+      var symbol = teethInstance.getCurrentSymbol();
 
+      console.log(symbol);
       this.fill("");
       this.fillPatternImage(background);
       // console.log(background);

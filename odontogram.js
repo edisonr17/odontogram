@@ -57,7 +57,7 @@ class odontogram extends teeth {
         return [{
                 id: 1,
                 name: "Caries",
-                fullTeeth: false,
+                validations:{fullTeeth:false, onlyCenter:false,   onlyFace:false},
                 src: "./resources/symbols/caries.png",
                 srcIcon: "./resources/symbols/cariesIcon.png",
                 tittle:"Simbolo 1"               
@@ -65,7 +65,7 @@ class odontogram extends teeth {
             {
                 id: 2,
                 name: "Fractura",
-                fullTeeth: false,
+                validations:{fullTeeth:false, onlyCenter:false,   onlyFace:false},
                 src: "./resources/symbols/caries2.png",
                 srcIcon: "./resources/symbols/caries3Icon.png",
                 tittle:"Fractura 1"               
@@ -73,7 +73,7 @@ class odontogram extends teeth {
             {
                 id: 3,
                 name: "Sellante",
-                fullTeeth: false,
+                validations:{fullTeeth:false, onlyCenter:false,   onlyFace:false},
                 src: "./resources/symbols/caries3.png",
                 srcIcon: "./resources/symbols/caries3Icon.png",
                 tittle:"Sellante 1"               
@@ -81,7 +81,7 @@ class odontogram extends teeth {
             {
                 id: 4,
                 name: "Caries",
-                fullTeeth: false,
+                validations:{fullTeeth:false, onlyCenter:false,   onlyFace:false},
                 src: "./resources/symbols/toolsExample.png",
                 srcIcon: "./resources/symbols/toolsExampleIcon.png",
                 tittle:"Caries 2"               
@@ -89,16 +89,15 @@ class odontogram extends teeth {
             {
                 id: 5,
                 name: "Fractura",
-                fullTeeth: false,
+                validations:{fullTeeth:false, onlyCenter:false,   onlyFace:false},
                 src: "./resources/symbols/implante.png",
                 srcIcon: "./resources/symbols/implanteIcon.png",
-
                 tittle:"Fractura de otro tipo 3"               
             },
             {
                 id: 6,
                 name: "poroso",
-                fullTeeth: false,
+                validations:{fullTeeth:false, onlyCenter:false,   onlyFace:false},
                 src: "./resources/symbols/fractura.png",
                 srcIcon: "./resources/symbols/fracturaIcon.png",
                 tittle:"Poroso 4"               
@@ -164,6 +163,7 @@ class odontogram extends teeth {
 
               tool.on('click', function (evt) {
                 toolsInstance.setCurrentBackground(symbol.srcIcon);
+                toolsInstance.setCurrentSymbol(symbol);
                 toolsInstance.getInstanceImageBackground(symbol.srcIcon);
                 this.stroke("black");
                 this.scaleX(1.03);
