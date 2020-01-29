@@ -67,7 +67,7 @@ class odontogram extends teeth {
                 name: "Fractura",
                 fullTeeth: false,
                 src: "./resources/symbols/caries2.png",
-                srcIcon: "./resources/symbols/caries2Icon.png",
+                srcIcon: "./resources/symbols/caries3Icon.png",
                 tittle:"Fractura 1"               
             },
             {
@@ -164,6 +164,7 @@ class odontogram extends teeth {
 
               tool.on('click', function (evt) {
                 toolsInstance.setCurrentBackground(symbol.srcIcon);
+                toolsInstance.getInstanceImageBackground(symbol.srcIcon);
                 this.stroke("black");
                 this.scaleX(1.03);
                 this.scaleY(1.03);
