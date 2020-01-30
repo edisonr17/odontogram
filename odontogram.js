@@ -57,7 +57,7 @@ class odontogram extends teeth {
         return [{
                 id: 1,
                 name: "Caries",
-                validations:{fullTeeth:false, onlyCenter:false,   onlyFace:false},
+                validations:{fullTeeth:false, onlyCenter:false,   onlyFace:true},
                 src: "./resources/symbols/caries.png",
                 srcIcon: "./resources/symbols/cariesIcon.png",
                 tittle:"Simbolo 1"               
@@ -65,7 +65,7 @@ class odontogram extends teeth {
             {
                 id: 2,
                 name: "Fractura",
-                validations:{fullTeeth:false, onlyCenter:false,   onlyFace:false},
+                validations:{fullTeeth:false, onlyCenter:true,   onlyFace:false},
                 src: "./resources/symbols/caries2.png",
                 srcIcon: "./resources/symbols/caries3Icon.png",
                 tittle:"Fractura 1"               

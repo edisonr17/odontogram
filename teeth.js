@@ -17,6 +17,42 @@ class teeth {
     return this.stage;
   }
 
+  /**
+   * Este metodo selecciona un fondo para el diente al clickear un simbolo
+   */
+  setCurrentBackground(src) {
+    this.currentBackground = src;
+    console.log(this.currentBackground);
+  }
+
+  symbol = null;
+  setCurrentSymbol(symbol) {
+    this.symbol = symbol;
+  }
+
+  getCurrentSymbol() {
+    return this.symbol;
+  }
+
+  getCurrentBackground() {
+    return this.currentBackground;
+  }
+
+  backgroundImagen = new Image();
+  getInstanceImageBackground(src) {
+    this.backgroundImagen.src = src;
+    return this.backgroundImagen;
+  }
+
+
+
+
+
+
+
+
+
+
 
   /**
    * Metodo que dibuja un diente completo
@@ -37,41 +73,66 @@ class teeth {
       this.layer.add(faces[k]);
       this.layer.draw();
     }
-
-
     this.layer.draw();
     this.stage.add(this.layer);
-
   }
+
+
 
 
   /**
-   * Este metodo selecciona un fondo para el diente al clickear un simbolo
+   * @object es la instancia del objecto que se va a pintar
+   * @type si es onmouseover, onclick, onmouseleave
+   *   validations:{fullTeeth:false, onlyCenter:false,   onlyFace:false},
    */
-  setCurrentBackground(src) {
-    this.currentBackground = src;
-    console.log(this.currentBackground);
+  commonSymbolValidationFalse(symbol) {
+    if ((symbol.validations.fullTeeth == false && symbol.validations.onlyCenter == false && symbol.validations.onlyFace == false)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  symbol = null;
-  setCurrentSymbol(symbol){
-    this.symbol = symbol;
-  }
-  
-  getCurrentSymbol()
-  {
-    return this.symbol;
+  symbolValidationBySection(symbol, type) {
+    if (type == "center") {
+      if (symbol.validations.onlyCenter == true) {
+        return true;
+      }
+    }
+    if (type == "face") {
+      if (symbol.validations.onlyFace == true) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
-  getCurrentBackground() {
-    return this.currentBackground;
+
+  validationClickOnTeeth(object, symbol, typeZone) {
+    console.log(symbol);
+    if (typeZone == "center" || typeZone == "face") {
+      if ((this.commonSymbolValidationFalse(symbol)) || (this.symbolValidationBySection(symbol, typeZone))) {
+        return {
+          status: true,
+          message: "Seleccionada correctamente"
+        };
+      } else {
+        return {
+          status: false,
+          message: "No se puede clickear esta cara"
+        };
+      }
+
+    } else {
+      console.log(typeZone)
+    }
+
   }
-  
-  backgroundImagen = new Image();
-  getInstanceImageBackground(src){
-    this.backgroundImagen.src = src;
-    return this.backgroundImagen;
-  }
+
+
+
+
 
   drawCenter(x, y) {
     var click = false;
@@ -87,13 +148,14 @@ class teeth {
     var background = this.getInstanceImageBackground(this.getCurrentBackground());
     var symbol = this.getCurrentSymbol();
     center.on('mouseover', function () {
-      if (click == false ) {
-        console.log(teethInstance.getCurrentBackground());
+      document.getElementById("contenedor").style.cursor = 'pointer';
+      if (click == false) {
+
         background.src = teethInstance.getCurrentBackground();
         this.fill("");
         this.fillPatternImage(background);
         // console.log(background);
-        document.getElementById("contenedor").style.cursor = 'pointer';
+    
         this.draw();
       }
 
@@ -104,25 +166,38 @@ class teeth {
         this.fillPatternImage();
         this.fill("white");
         this.draw();
-        document.getElementById("contenedor").style.cursor = 'default';
+       
+      }
+      document.getElementById("contenedor").style.cursor = 'default';
+    });
+
+    center.on('click', function () {
+
+      var symbol = teethInstance.getCurrentSymbol();
+      var resultValidations = teethInstance.validationClickOnTeeth(center, symbol, "center");
+      document.getElementById("contenedor").style.cursor = 'pointer';
+      if (resultValidations.status == true) {
+        this.fill("");
+        this.fillPatternImage(background);
+        // console.log(background);
+       
+        background.src = teethInstance.getCurrentBackground();
+        click = true;
+        this.draw();
+        console.log(resultValidations.message);
+      } else {
+        console.log(resultValidations.message);
       }
 
     });
 
-    center.on('click', function () {
-      this.fill("");
-      this.fillPatternImage(background);
-      // console.log(background);
-      document.getElementById("contenedor").style.cursor = 'pointer';
-      background.src = teethInstance.getCurrentBackground();
-      click = true;
-      this.draw();
-    });
 
- 
     return center;
-
   }
+
+
+
+
 
   drawFace(rotation, angle, stage, layer, x, y, color) {
     var teethInstance = this;
@@ -141,7 +216,7 @@ class teeth {
 
 
     var background = this.getInstanceImageBackground();
-    
+
 
 
     var click = false;
@@ -153,26 +228,29 @@ class teeth {
         this.fill("");
         this.fillPatternImage(background);
         // console.log(background);
-        document.getElementById("contenedor").style.cursor = 'pointer';
-
-
-
+       
         this.draw();
       }
-
+      document.getElementById("contenedor").style.cursor = 'pointer';
     });
 
     face.on('click', function () {
       var symbol = teethInstance.getCurrentSymbol();
-
-      console.log(symbol);
-      this.fill("");
-      this.fillPatternImage(background);
-      // console.log(background);
+      var resultValidations = teethInstance.validationClickOnTeeth(face, symbol, "face");
       document.getElementById("contenedor").style.cursor = 'pointer';
-      background.src = teethInstance.getCurrentBackground();
-      click = true;
-      this.draw();
+      if (resultValidations.status == true) {
+        this.fill("");
+        this.fillPatternImage(background);
+        // console.log(background);
+       
+        background.src = teethInstance.getCurrentBackground();
+        click = true;
+        this.draw();
+        console.log(resultValidations.message);
+      } else {
+        console.log(resultValidations.message);
+      }
+
 
     });
 
@@ -180,17 +258,25 @@ class teeth {
       if (click == false) {
         this.fillPatternImage();
         this.fill("white");
-
         this.draw();
-
-        document.getElementById("contenedor").style.cursor = 'default';
+       
       }
-
-
+      document.getElementById("contenedor").style.cursor = 'default';
     });
 
     return face;
   }
+
+
+
+
+
+
+
+
+
+
+
 
   drawContainer(x, y) {
     var teethInstance = this;
@@ -204,11 +290,11 @@ class teeth {
       stroke: 'black',
       rotation: 0,
       strokeWidth: 1,
-   
+
     });
     center.on('mouseover', function () {
-     /* this.stroke("yellow");
-      this.fill("yellow");*/
+      /* this.stroke("yellow");
+       this.fill("yellow");*/
       this.moveToTop();
 
       this.draw();
@@ -216,8 +302,8 @@ class teeth {
     });
 
     center.on('mouseleave', function () {
-     // this.stroke("black");
-     // this.fill("black");
+      // this.stroke("black");
+      // this.fill("black");
       this.moveToBottom();
       document.getElementById("contenedor").style.cursor = 'default';
       this.draw();
