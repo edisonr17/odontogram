@@ -58,6 +58,14 @@ class teeth {
    * Metodo que dibuja un diente completo
    */
   drawTeeth(x, y) {
+    var group = new Konva.Group({
+      draggable: true,
+    });
+
+    group.on('click', function() {
+      document.body.style.cursor = 'default';
+      console.log("paso por el diente");
+    });
     // add the shape to the layer
     var faces = [
       this.drawFace(0 - 45, 90, this.stage, this.layer, x, y, "white"),
@@ -65,14 +73,14 @@ class teeth {
       this.drawFace(180 - 45, 90, this.stage, this.layer, x, y, "white"),
       this.drawFace(270 - 45, 90, this.stage, this.layer, x, y, "white")
     ]
-    this.layer.add(this.drawContainer(x, y));
-    this.layer.add(this.drawCenter(x, y));
+    group.add(this.drawContainer(x, y, 18,22));
+    group.add(this.drawCenter(x, y, 8));
 
     for (var k = 0; k < 4; k++) {
-
-      this.layer.add(faces[k]);
-      this.layer.draw();
+      group.add(faces[k]);
+     
     }
+    this.layer.add(group);
     this.layer.draw();
     this.stage.add(this.layer);
   }
@@ -134,13 +142,13 @@ class teeth {
 
 
 
-  drawCenter(x, y) {
+  drawCenter(x, y, radius) {
     var click = false;
     var teethInstance = this;
     var center = new Konva.Circle({
       x: x,
       y: y,
-      radius: 8,
+      radius: radius,
       fill: 'white',
       stroke: 'black',
       strokeWidth: 1
@@ -278,13 +286,13 @@ class teeth {
 
 
 
-  drawContainer(x, y) {
+  drawContainer(x, y, minRadius, maxRadius) {
     var teethInstance = this;
     var center = new Konva.Arc({
       x: x,
       y: y,
-      innerRadius: 18,
-      outerRadius: 22,
+      innerRadius: minRadius ,
+      outerRadius:maxRadius  ,
       angle: 361,
       fill: "black",
       stroke: 'black',
