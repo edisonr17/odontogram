@@ -10,7 +10,12 @@ class teeth {
   currentBackground = "./resources/symbols/implante.png";
 
   constructor() {
+   var stage = this.stage;
 
+   stage.on("click",function(){
+    stage.draw();
+   });
+ 
   }
 
   getStage() {
@@ -50,7 +55,51 @@ class teeth {
 
 
 
+getGroup(){
 
+  var group = new Konva.Group({
+    draggable: true,
+    drawBorder: false,
+    width:40,
+    height:40
+  });
+
+
+  group.on('mouseleave', function(evt) {
+    document.body.style.cursor = 'default';
+   /* var box = evt.target;
+    box.scale(30);
+    box.draw();*/
+    this.draw();
+  });
+
+  group.on('mouseover', function(){
+    document.body.style.cursor = 'pointer';
+
+  });
+  var click = false;
+  group.on('click', function(){
+   console.log(click);
+    if(!click)
+    {
+      click = true;
+      this.opacity(0);
+    }
+    else
+    {
+      click = false;
+      this.opacity(1);
+
+    }
+    console.log(this);
+    this.draw();
+    // set opacity
+    document.body.style.cursor = 'pointer';
+ //   group.draw();
+  });
+
+  return group;
+}
 
 
 
@@ -58,36 +107,19 @@ class teeth {
    * Metodo que dibuja un diente completo
    */
   drawTeeth(x, y) {
-    var group = new Konva.Group({
-      draggable: false,
-    });
+
 
     var background = this.getInstanceImageBackground(this.getCurrentBackground());
     var symbol = this.getCurrentSymbol();
+    var group = this.getGroup();
 
-
-    group.on('mouseleave', function() {
-      document.body.style.cursor = 'default';
     
-    });
-
-    group.on('mouseover', function(){
-      document.body.style.cursor = 'pointer';
-  
-
-    });
-
-    group.on('click', function(){
-     
-      console.log("paso por el diente");
-      document.body.style.cursor = 'pointer';
-
-    });
-
+    var teethInstance = this;
 
 
     // add the shape to the layer
     var faces = [
+     
       this.drawFace(0 - 45, 90, this.stage, this.layer, x, y, "white"),
       this.drawFace(90 - 45, 90, this.stage, this.layer, x, y, "white"),
       this.drawFace(180 - 45, 90, this.stage, this.layer, x, y, "white"),
@@ -100,12 +132,18 @@ class teeth {
       group.add(faces[k]);
      
     }
+
+ 
+
     this.layer.add(group);
     this.layer.draw();
-    this.stage.add(this.layer);
+
   }
 
 
+  refresh(){
+
+  }
 
 
   /**
@@ -320,7 +358,7 @@ class teeth {
 
   drawContainer(x, y, minRadius, maxRadius) {
     var teethInstance = this;
-    var center = new Konva.Arc({
+    var center = new Konva.Ring({
       x: x,
       y: y,
       innerRadius: minRadius ,
@@ -344,7 +382,7 @@ class teeth {
     center.on('mouseleave', function () {
       // this.stroke("black");
       // this.fill("black");
-      this.moveToBottom();
+
       this.fill("#2E9AFE");
       document.getElementById("contenedor").style.cursor = 'default';
       this.draw();
