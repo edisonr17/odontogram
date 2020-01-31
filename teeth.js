@@ -59,13 +59,33 @@ class teeth {
    */
   drawTeeth(x, y) {
     var group = new Konva.Group({
-      draggable: true,
+      draggable: false,
     });
 
-    group.on('click', function() {
+    var background = this.getInstanceImageBackground(this.getCurrentBackground());
+    var symbol = this.getCurrentSymbol();
+
+
+    group.on('mouseleave', function() {
       document.body.style.cursor = 'default';
-      console.log("paso por el diente");
+    
     });
+
+    group.on('mouseover', function(){
+      document.body.style.cursor = 'pointer';
+  
+
+    });
+
+    group.on('click', function(){
+     
+      console.log("paso por el diente");
+      document.body.style.cursor = 'pointer';
+
+    });
+
+
+
     // add the shape to the layer
     var faces = [
       this.drawFace(0 - 45, 90, this.stage, this.layer, x, y, "white"),
@@ -160,7 +180,8 @@ class teeth {
       if (click == false) {
 
         background.src = teethInstance.getCurrentBackground();
-        this.fill("");
+        this.stroke("blue");
+        this.strokeWidth(2);
         this.fillPatternImage(background);
         // console.log(background);
     
@@ -173,6 +194,9 @@ class teeth {
       if (click == false) {
         this.fillPatternImage();
         this.fill("white");
+        this.strokeWidth(1);
+
+        this.stroke("black");
         this.draw();
        
       }
@@ -188,7 +212,9 @@ class teeth {
         this.fill("");
         this.fillPatternImage(background);
         // console.log(background);
-       
+        this.strokeWidth(1);
+
+        this.stroke("black");
         background.src = teethInstance.getCurrentBackground();
         click = true;
         this.draw();
@@ -236,7 +262,8 @@ class teeth {
         this.fill("");
         this.fillPatternImage(background);
         // console.log(background);
-       
+        this.stroke("green");
+        this.strokeWidth(2);
         this.draw();
       }
       document.getElementById("contenedor").style.cursor = 'pointer';
@@ -250,7 +277,9 @@ class teeth {
         this.fill("");
         this.fillPatternImage(background);
         // console.log(background);
-       
+        this.strokeWidth(1);
+
+        this.stroke("black");
         background.src = teethInstance.getCurrentBackground();
         click = true;
         this.draw();
@@ -266,6 +295,9 @@ class teeth {
       if (click == false) {
         this.fillPatternImage();
         this.fill("white");
+        this.strokeWidth(1);
+
+        this.stroke("black");
         this.draw();
        
       }
@@ -294,17 +326,17 @@ class teeth {
       innerRadius: minRadius ,
       outerRadius:maxRadius  ,
       angle: 361,
-      fill: "black",
+      fill: "#2E9AFE",
       stroke: 'black',
       rotation: 0,
       strokeWidth: 1,
 
     });
     center.on('mouseover', function () {
-      /* this.stroke("yellow");
-       this.fill("yellow");*/
-      this.moveToTop();
-
+      /*this.stroke("yellow");
+       this.fill("yellow");
+     */ this.moveToTop();
+      this.fill("#5858FA");
       this.draw();
       document.getElementById("contenedor").style.cursor = 'pointer';
     });
@@ -313,6 +345,7 @@ class teeth {
       // this.stroke("black");
       // this.fill("black");
       this.moveToBottom();
+      this.fill("#2E9AFE");
       document.getElementById("contenedor").style.cursor = 'default';
       this.draw();
 
