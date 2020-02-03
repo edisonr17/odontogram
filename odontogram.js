@@ -4,7 +4,7 @@ class odontogram extends teeth {
     * @param xmax tamaño maximo en x
     * @param ymax tamaño maximo en y
     */  
-
+                                                                                              
     drawDivs(xmax, ymax) {
 
         var verticalLine = new Konva.Line({
@@ -143,20 +143,24 @@ class odontogram extends teeth {
             //group.add(yoda);
             tool.on('mouseleave', function (evt) {
                 this.stroke("blue");
-                this.scaleX(1);
                 this.scaleY(1);
+                this.scaleX(1);
+                this.moveToBottom();
                 this.draw();
+                stage.draw();
                 document.getElementById("contenedor").style.cursor = 'default';
           
               });
               tool.on('mouseover', function (evt) {
                 this.stroke("black");
-                this.scaleX(1.03);
-                this.scaleY(1.03);
+                this.scaleY(2);
+                this.scaleX(2);
+                this.moveToTop();
                 toolsInstance.setTittle(symbol.tittle);
                 document.getElementById("contenedor").style.cursor = 'pointer';
                
                 this.draw();
+                stage.draw();
 
 
               });
@@ -166,8 +170,7 @@ class odontogram extends teeth {
                 toolsInstance.setCurrentSymbol(symbol);
                 toolsInstance.getInstanceImageBackground(symbol.srcIcon);
                 this.stroke("black");
-                this.scaleX(1.03);
-                this.scaleY(1.03);
+                this.scale(1);
                 
                 document.getElementById("contenedor").style.cursor = 'pointer';
                
@@ -182,7 +185,7 @@ class odontogram extends teeth {
             layer.add(tool);
             // add the layer to the stage
             stage.add(layer);
-        };
+        }
         imageObj.src = symbol.src;
         return imageObj;
     }

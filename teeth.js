@@ -1,20 +1,15 @@
 class teeth {
-  stage = new Konva.Stage({
-    container: 'container',
-    width: 1200,
-    height: 700
-  });
 
 
-  layer = new Konva.Layer();
   currentBackground = "./resources/symbols/implante.png";
-
-  constructor() {
-   var stage = this.stage;
-
-   stage.on("click",function(){
-    stage.draw();
-   });
+  stage =  null;
+  layer = null;
+  constructor(stage, layer) {
+    this.stage = stage;
+    this.layer = layer;
+    stage.on("click",function(){
+      stage.draw();
+    });
  
   }
 
@@ -56,7 +51,7 @@ class teeth {
 
 
 getGroup(){
-
+  var stage = this.stage;
   var group = new Konva.Group({
     draggable: true,
     drawBorder: false,
@@ -70,12 +65,13 @@ getGroup(){
    /* var box = evt.target;
     box.scale(30);
     box.draw();*/
-    this.draw();
+    stage.draw();
   });
 
   group.on('mouseover', function(){
     document.body.style.cursor = 'pointer';
-
+    
+    stage.draw();
   });
   var click = false;
   group.on('click', function(){
@@ -83,7 +79,7 @@ getGroup(){
     if(!click)
     {
       click = true;
-      this.opacity(0);
+      this.opacity(0.5);
     }
     else
     {
@@ -91,8 +87,7 @@ getGroup(){
       this.opacity(1);
 
     }
-    console.log(this);
-    this.draw();
+    stage.draw();
     // set opacity
     document.body.style.cursor = 'pointer';
  //   group.draw();
@@ -152,6 +147,11 @@ getGroup(){
    *   validations:{fullTeeth:false, onlyCenter:false,   onlyFace:false},
    */
   commonSymbolValidationFalse(symbol) {
+    console.log(symbol);
+    if(symbol == null)
+    {
+      return false;
+    }
     if ((symbol.validations.fullTeeth == false && symbol.validations.onlyCenter == false && symbol.validations.onlyFace == false)) {
       return true;
     } else {
@@ -160,6 +160,11 @@ getGroup(){
   }
 
   symbolValidationBySection(symbol, type) {
+    if(symbol == null)
+    {
+      return false;
+    }
+
     if (type == "center") {
       if (symbol.validations.onlyCenter == true) {
         return true;
@@ -176,7 +181,6 @@ getGroup(){
 
 
   validationClickOnTeeth(object, symbol, typeZone) {
-    console.log(symbol);
     if (typeZone == "center" || typeZone == "face") {
       if ((this.commonSymbolValidationFalse(symbol)) || (this.symbolValidationBySection(symbol, typeZone))) {
         return {
@@ -302,7 +306,7 @@ getGroup(){
         // console.log(background);
         this.stroke("green");
         this.strokeWidth(2);
-        this.draw();
+        stage.draw();
       }
       document.getElementById("contenedor").style.cursor = 'pointer';
     });
@@ -320,7 +324,6 @@ getGroup(){
         this.stroke("black");
         background.src = teethInstance.getCurrentBackground();
         click = true;
-        this.draw();
         console.log(resultValidations.message);
       } else {
         console.log(resultValidations.message);
@@ -394,4 +397,6 @@ getGroup(){
   }
 
 
-}
+};
+
+
