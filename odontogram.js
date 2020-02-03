@@ -104,6 +104,9 @@ class odontogram extends teeth {
             }
         ];
     }
+
+    
+
   
     /** 
      * trae la configuración grafica del simbolo

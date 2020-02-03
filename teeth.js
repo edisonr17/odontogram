@@ -48,7 +48,7 @@ class teeth {
 
 
 
-
+//Eventos del diente completo
 
 getGroup(){
   var stage = this.stage;
@@ -114,12 +114,11 @@ getGroup(){
 
     // add the shape to the layer
     var faces = [
-     
       this.drawFace(0 - 45, 90, this.stage, this.layer, x, y, "white"),
       this.drawFace(90 - 45, 90, this.stage, this.layer, x, y, "white"),
       this.drawFace(180 - 45, 90, this.stage, this.layer, x, y, "white"),
       this.drawFace(270 - 45, 90, this.stage, this.layer, x, y, "white")
-    ]
+    ];
     group.add(this.drawContainer(x, y, 18,22));
     group.add(this.drawCenter(x, y, 8));
 
@@ -136,10 +135,7 @@ getGroup(){
   }
 
 
-  refresh(){
-
-  }
-
+  
 
   /**
    * @object es la instancia del objecto que se va a pintar
@@ -397,6 +393,12 @@ getGroup(){
   }
 
 
+
+  
+
 };
+
+
+
 
 
