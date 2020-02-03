@@ -1,4 +1,4 @@
-class teeth {
+class teeth extends commons {
 
 
   currentBackground = "./resources/symbols/implante.png";

@@ -13,5 +13,17 @@
   "license": "ISC",
   "dependencies": {
     "konva": "^4.1.2"
-  }
+  },
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edisonr17/odontogram.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edisonr17/odontogram/issues"
+  },
+  "homepage": "https://github.com/edisonr17/odontogram#readme"
 }
