@@ -3,7 +3,67 @@ class TeethClass extends BaseOdontogram {
 
   currentBackground = "./resources/symbols/implante.png";
 
+    /**
+   * Esta función se usa para agrupar cada seccion del diente como un todo0
+   */
+  getGroup(id) {
 
+    var click = false;
+    var background = this.getInstanceImageBackground(this.getCurrentBackground());
+    var teethInstance = this;
+    var stage = this.stage;
+    var group = new Konva.Group({
+      draggable: true,
+      drawBorder: false,
+      width: 40,
+      height: 40,
+      id: id
+    });
+
+
+    group.on('mouseleave', function (evt) {
+      document.body.style.cursor = 'default';
+      stage.draw();
+    });
+
+    group.on('mouseover', function () {
+      document.body.style.cursor = 'pointer';
+      stage.draw();
+    });
+
+    group.on('click', function () {
+      console.log("Has clickeado en el diente: " + this.id());
+      var symbol = teethInstance.getCurrentSymbol();
+      console.log(symbol);
+      if (!click) {
+        if(symbol != null){
+          if(symbol.validations.fullTeeth == true)
+          { 
+            console.log("Se peude aplicar");
+            click = true;
+         //   this.opacity(0.5);
+          }
+          else
+          {
+            console.log("No se pede aplicar al diente completo");
+          }
+        }
+        else
+        {
+          console.log(" NO se ha seleciconado simbolo");
+        }
+      } else {
+        click = false;
+       // this.opacity(1);
+      }
+      stage.draw();
+      // set opacity
+      document.body.style.cursor = 'pointer';
+      //   group.draw();
+    });
+
+    return group;
+  }
 
   /**
    * Metodo que dibuja un diente completo
@@ -27,6 +87,7 @@ class TeethClass extends BaseOdontogram {
       this.drawFace(270 - 45, 90, this.stage, this.layer, x, y, "white")
     ];
     group.add(this.drawContainer(x, y, 18,22));
+    group.add(this.fullTeethContainer(x, y, 22));
     group.add(this.drawCenter(x, y, 8));
 
     for (var k = 0; k < 4; k++) {
@@ -104,9 +165,9 @@ class TeethClass extends BaseOdontogram {
         background.src = teethInstance.getCurrentBackground();
         click = true;
         this.draw();
-        console.log(resultValidations.message);
+    //    console.log(resultValidations.message);
       } else {
-        console.log(resultValidations.message);
+     //   console.log(resultValidations.message);
       }
 
     });
@@ -168,9 +229,9 @@ class TeethClass extends BaseOdontogram {
         this.stroke("black");
         background.src = teethInstance.getCurrentBackground();
         click = true;
-        console.log(resultValidations.message);
+     //   console.log(resultValidations.message);
       } else {
-        console.log(resultValidations.message);
+     //   console.log(resultValidations.message);
       }
 
 
@@ -242,6 +303,57 @@ class TeethClass extends BaseOdontogram {
 
 
 
+
+
+  fullTeethContainer(x, y, radius) {
+    var teethInstance = this;
+    var stage = this.stage;
+    var background = this.getInstanceImageBackground();
+    var symbol = this.getCurrentSymbol();
+   var circle = new Konva.Circle({
+      x: x,
+      y: y,
+      radius: radius,
+      fill: 'red',
+      stroke: 'black',
+      strokeWidth: 4
+    });
+    circle.on('mouseover', function () {
+      /*this.stroke("yellow");
+       this.fill("yellow");
+       
+     */
+    background.src = teethInstance.getCurrentBackground();
+     this.moveToTop();
+     this.fill("");
+     this.fillPatternImage(background);
+    // this.opacity(8);     
+
+    this.fillPatternOffset({
+      x: 20,
+      y: 20
+    });
+          this.opacity(0.9);     
+
+      document.getElementById("contenedor").style.cursor = 'pointer';
+      stage.draw();
+    });
+
+    circle.on('mouseleave', function () {
+      this.fillPatternImage();
+         
+      this.fillPatternImage(background);
+
+    
+
+      document.getElementById("contenedor").style.cursor = 'default';
+      stage.draw();
+
+    });
+
+    return circle;
+
+  }
   
 
 };

@@ -193,12 +193,12 @@
                   id: 6,
                   name: "poroso",
                   validations: {
-                      fullTeeth: false,
+                      fullTeeth: true,
                       onlyCenter: false,
                       onlyFace: false
                   },
-                  src: "./resources/symbols/fractura.png",
-                  srcIcon: "./resources/symbols/fracturaIcon.png",
+                  src: "./resources/symbols/icon5.png",
+                  srcIcon: "./resources/symbols/icon5Icon.png",
                   tittle: "Poroso 4"
               }
           ];
@@ -230,7 +230,7 @@
                   width: widthIcon,
                   fill: "blue",
                   stroke: "blue",
-
+                  fillPatternRepeat:"no-repeat",
                   height: heightIcon,
                   draggable: false,
                   name: "tools" + position,

@@ -18,51 +18,7 @@ class BaseOdontogram {
 
 
 
-  /**
-   * Esta función se usa para agrupar cada seccion del diente como un todo0
-   */
-  getGroup(id) {
 
-    var click = false;
-
-    var stage = this.stage;
-    var group = new Konva.Group({
-      draggable: true,
-      drawBorder: false,
-      width: 40,
-      height: 40,
-      id: id
-    });
-
-
-    group.on('mouseleave', function (evt) {
-      document.body.style.cursor = 'default';
-      stage.draw();
-    });
-
-    group.on('mouseover', function () {
-      document.body.style.cursor = 'pointer';
-      stage.draw();
-    });
-
-    group.on('click', function () {
-      console.log("Has clickeado en el diente: " + this.id());
-
-      if (!click) {
-        click = true;
-        this.opacity(0.5);
-      } else {
-        click = false;
-        this.opacity(1);
-      }
-      stage.draw();
-      // set opacity
-      document.body.style.cursor = 'pointer';
-      //   group.draw();
-    });
-
-    return group;
-  }
 
 
 
@@ -110,7 +66,6 @@ class BaseOdontogram {
    *   validations:{fullTeeth:false, onlyCenter:false,   onlyFace:false},
    */
   commonSymbolValidationFalse(symbol) {
-    console.log(symbol);
     if (symbol == null) {
       return false;
     }
