@@ -1,113 +1,20 @@
-class teeth extends commons {
+class TeethClass extends BaseOdontogram {
 
 
   currentBackground = "./resources/symbols/implante.png";
-  stage =  null;
-  layer = null;
-  constructor(stage, layer) {
-    this.stage = stage;
-    this.layer = layer;
-    stage.on("click",function(){
-      stage.draw();
-    });
- 
-  }
-
-  getStage() {
-    return this.stage;
-  }
-
-  /**
-   * Este metodo selecciona un fondo para el diente al clickear un simbolo
-   */
-  setCurrentBackground(src) {
-    this.currentBackground = src;
-    console.log(this.currentBackground);
-  }
-
-  symbol = null;
-  setCurrentSymbol(symbol) {
-    this.symbol = symbol;
-  }
-
-  getCurrentSymbol() {
-    return this.symbol;
-  }
-
-  getCurrentBackground() {
-    return this.currentBackground;
-  }
-
-  backgroundImagen = new Image();
-  getInstanceImageBackground(src) {
-    this.backgroundImagen.src = src;
-    return this.backgroundImagen;
-  }
-
-
-
-
-
-//Eventos del diente completo
-
-getGroup(){
-  var stage = this.stage;
-  var group = new Konva.Group({
-    draggable: true,
-    drawBorder: false,
-    width:40,
-    height:40
-  });
-
-
-  group.on('mouseleave', function(evt) {
-    document.body.style.cursor = 'default';
-   /* var box = evt.target;
-    box.scale(30);
-    box.draw();*/
-    stage.draw();
-  });
-
-  group.on('mouseover', function(){
-    document.body.style.cursor = 'pointer';
-    
-    stage.draw();
-  });
-  var click = false;
-  group.on('click', function(){
-   console.log(click);
-    if(!click)
-    {
-      click = true;
-      this.opacity(0.5);
-    }
-    else
-    {
-      click = false;
-      this.opacity(1);
-
-    }
-    stage.draw();
-    // set opacity
-    document.body.style.cursor = 'pointer';
- //   group.draw();
-  });
-
-  return group;
-}
 
 
 
   /**
    * Metodo que dibuja un diente completo
    */
-  drawTeeth(x, y) {
+  drawTeeth(x, y, teethId) {
 
-
+    console.log(teethId);
     var background = this.getInstanceImageBackground(this.getCurrentBackground());
     var symbol = this.getCurrentSymbol();
-    var group = this.getGroup();
-
+    var group = this.getGroup(teethId);
+    
     
     var teethInstance = this;
 
@@ -136,65 +43,6 @@ getGroup(){
 
 
   
-
-  /**
-   * @object es la instancia del objecto que se va a pintar
-   * @type si es onmouseover, onclick, onmouseleave
-   *   validations:{fullTeeth:false, onlyCenter:false,   onlyFace:false},
-   */
-  commonSymbolValidationFalse(symbol) {
-    console.log(symbol);
-    if(symbol == null)
-    {
-      return false;
-    }
-    if ((symbol.validations.fullTeeth == false && symbol.validations.onlyCenter == false && symbol.validations.onlyFace == false)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  symbolValidationBySection(symbol, type) {
-    if(symbol == null)
-    {
-      return false;
-    }
-
-    if (type == "center") {
-      if (symbol.validations.onlyCenter == true) {
-        return true;
-      }
-    }
-    if (type == "face") {
-      if (symbol.validations.onlyFace == true) {
-        return true;
-      }
-    }
-
-    return false;
-  }
-
-
-  validationClickOnTeeth(object, symbol, typeZone) {
-    if (typeZone == "center" || typeZone == "face") {
-      if ((this.commonSymbolValidationFalse(symbol)) || (this.symbolValidationBySection(symbol, typeZone))) {
-        return {
-          status: true,
-          message: "Seleccionada correctamente"
-        };
-      } else {
-        return {
-          status: false,
-          message: "No se puede clickear esta cara"
-        };
-      }
-
-    } else {
-      console.log(typeZone)
-    }
-
-  }
 
 
 

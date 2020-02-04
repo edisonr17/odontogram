@@ -4,17 +4,27 @@
   "description": "Version 1 del odontograma",
   "main": "main.js",
   "scripts": {
-    "test": "testOd"
-  },
+    "test": "testOd",
+    "build": "webpack --config=webpack.config.js"
+    },
   "keywords": [
     "odontograma"
   ],
   "author": "Edison Rave",
   "license": "ISC",
   "dependencies": {
-    "konva": "^4.1.2"
+    "babel-core": "^6.26.3",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "konva": "^4.1.2",
+    "lodash": "^4.17.15",
+    "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-loader": "^8.0.6",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
