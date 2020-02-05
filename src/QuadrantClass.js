@@ -2,7 +2,6 @@
 
 
       drawCuadrant(xmax, ymax, quadrant, type, anchoCuadrante1, altoCuadrante1, quadrantObject) {
-          console.log(quadrantObject);
           for (var k = 1; k < 9; k++) {
               var x = null;
               var y = null;
@@ -181,12 +180,12 @@
                   id: 5,
                   name: "Fractura",
                   validations: {
-                      fullTeeth: false,
+                      fullTeeth: true,
                       onlyCenter: false,
                       onlyFace: false
                   },
                   src: "./resources/symbols/implante.png",
-                  srcIcon: "./resources/symbols/implanteIcon.png",
+                  srcIcon: "./resources/symbols/icon1icon.png",
                   tittle: "Fractura de otro tipo 3"
               },
               {
