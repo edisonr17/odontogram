@@ -141,9 +141,9 @@ class BaseOdontogram {
             id: 18,
             name: "Diente 1",
             type: "",
-            position: "",
+            position: "jhuhi",
             sections: {
-              top: {},
+              top: {name:"iuhiu"},
               left: {},
               down: {},
               right: {},
