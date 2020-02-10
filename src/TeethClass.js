@@ -52,6 +52,7 @@ class TeethClass extends BaseOdontogram {
 
     group.on('mouseleave', function (evt) {
       document.body.style.cursor = 'default';
+
       stage.draw();
     });
 

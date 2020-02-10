@@ -4,7 +4,7 @@ class odontogram extends QuadrantClass {
      * @param xmax tamaño maximo en x
      * @param ymax tamaño maximo en y
      */
-
+    
     drawDivs(xmax, ymax) {
 
         var verticalLine = new Konva.Line({
@@ -88,7 +88,7 @@ class odontogram extends QuadrantClass {
          this.drawCuadrantTitle(xmax * .85 / 2 + 10, ymax / 4 + 10, 'III');
     }
 
-
+    
 
 
 
