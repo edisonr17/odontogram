@@ -1,4 +1,5 @@
 
+
 var stage = new Konva.Stage({
     container: 'container',
     width: 1200,
