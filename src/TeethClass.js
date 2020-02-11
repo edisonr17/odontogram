@@ -5,12 +5,11 @@ class TeethClass extends BaseOdontogram {
   /**
    * Metodo que dibuja un diente completo
    */
-  drawNumber(x, y, teethNumber)
-  {
+  drawNumber(x, y, teethNumber) {
     console.log();
     var simpleText = new Konva.Text({
-      x: x-23,
-      y: y+21,
+      x: x - 23,
+      y: y + 17,
       text: teethNumber,
       fontSize: 10,
       fill: '#555',
@@ -35,15 +34,15 @@ class TeethClass extends BaseOdontogram {
       this.drawFace(180 - 45, 90, this.stage, this.layer, x, y, "white", "bottom" + teethId),
       this.drawFace(270 - 45, 90, this.stage, this.layer, x, y, "white", "left" + teethId)
     ];
-    
+
     group.add(this.drawNumber(x, y, teethId));
 
-    group.add(this.drawBorderContainer(x, y, 18, 22, "container" + teethId,0));
-    group.add(this.drawBorderContainer(x, y, 18, 22, "container" + teethId,180) );
+    group.add(this.drawBorderContainer(x, y, 18, 22, "container" + teethId, 0));
+    group.add(this.drawBorderContainer(x, y, 18, 22, "container" + teethId, 180));
 
     group.add(this.fullTeethContainer(x, y, 22, "fullTeeth" + teethId));
     group.add(this.drawCenter(x, y, 8, "center" + teethId));
-    
+
     for (var k = 0; k < 4; k++) {
       group.add(faces[k]);
 
@@ -130,7 +129,7 @@ class TeethClass extends BaseOdontogram {
       x: x,
       y: y,
       id: teethId,
-      radius: radius-2,
+      radius: radius - 2,
       fill: 'rgba(0,0,0,0)',
       stroke: 'rgba(0,0,0,0)',
       strokeWidth: 1
@@ -141,33 +140,32 @@ class TeethClass extends BaseOdontogram {
        
      */
       var symbol = teethInstance.getCurrentSymbol();
-      if(symbol != null)
-      {
-        if(click == false)
-        {
-        if (symbol.validations.fullTeeth == true) {
-          background.src = teethInstance.getCurrentBackground();
-          this.moveToTop();
-          this.fill("");
-          this.fillPatternImage(background);
-          // this.opacity(8);     
+      if (symbol != null) {
+        if (click == false) {
+          if (symbol.validations.fullTeeth == true) {
+            background.src = teethInstance.getCurrentBackground();
+            this.moveToTop();
+            this.fill("");
+            this.fillPatternImage(background);
+            // this.opacity(8);     
+          }
+
+          this.fillPatternOffset({
+            x: 20,
+            y: 20
+          });
+          this.opacity(0.9);
+          document.getElementById("contenedor").style.cursor = 'pointer';
+          stage.draw();
         }
-  
-        this.fillPatternOffset({x: 20, y: 20  });
-        this.opacity(0.9);
-        document.getElementById("contenedor").style.cursor = 'pointer';
-        stage.draw();
       }
-      }
- 
+
     });
 
     circle.on('mouseleave', function () {
-      if(click == false)
-      {
+      if (click == false) {
         var symbol = teethInstance.getCurrentSymbol();
-        if(symbol != null)
-        {
+        if (symbol != null) {
           if (symbol.validations.fullTeeth == false) {
             this.moveToBottom();
           }
@@ -177,15 +175,14 @@ class TeethClass extends BaseOdontogram {
           stage.draw();
         }
       }
-  
+
     });
 
 
     circle.on('click', function () {
-      click =true;
+      click = true;
       var symbol = teethInstance.getCurrentSymbol();
-      if(symbol != null)
-      {
+      if (symbol != null) {
         if (symbol.validations.fullTeeth == true) {
           background.src = teethInstance.getCurrentBackground();
           this.moveToTop();
@@ -193,8 +190,11 @@ class TeethClass extends BaseOdontogram {
           this.fillPatternImage(background);
           // this.opacity(8);     
         }
-  
-        this.fillPatternOffset({x: 20, y: 20  });
+
+        this.fillPatternOffset({
+          x: 20,
+          y: 20
+        });
         this.opacity(0.9);
         document.getElementById("contenedor").style.cursor = 'pointer';
         stage.draw();
@@ -396,19 +396,20 @@ class TeethClass extends BaseOdontogram {
 
 
   drawBorderContainer(x, y, minRadius, maxRadius, teethId, rotation) {
-    
+
     var teethInstance = this;
+    var click = false;
     var center = new Konva.Arc({
       x: x,
       y: y,
       id: teethId,
-      innerRadius: minRadius +1,
+      innerRadius: minRadius + 1,
       outerRadius: maxRadius + 1,
       angle: 180,
-      fill: "#000",
+      fill: "#A4A4A4",
       stroke: '',
       rotation: rotation,
-      strokeWidth: 1,
+      strokeWidth: 2,
 
     });
     center.on('mouseover', function () {
@@ -416,12 +417,23 @@ class TeethClass extends BaseOdontogram {
        this.fill("yellow");
      */
       var symbol = teethInstance.getCurrentSymbol();
+      console.log(symbol);
       if (symbol.validations.fullTeeth == false) {
-        this.moveToTop();
+        if ((symbol.validations.onlyTopBorder == true && rotation > 0)) {
+          this.moveToTop();
+          this.fill(symbol.validations.color);
+        }
+
+
+        if ((symbol.validations.onlyBottomBorder == true && rotation == 0)) {
+          this.moveToTop();
+          this.fill(symbol.validations.color);
+        }
       } else {
         this.moveToBottom();
+
       }
-      this.fill("red");
+
       teethInstance.stage.draw();
       document.getElementById("contenedor").style.cursor = 'pointer';
     });
@@ -429,12 +441,55 @@ class TeethClass extends BaseOdontogram {
     center.on('mouseleave', function () {
       // this.stroke("black");
       // this.fill("black");
+      if (click == false) {
+        this.fill("#A4A4A4");
 
-      this.fill("#000");
+      }
       document.getElementById("contenedor").style.cursor = 'default';
       teethInstance.stage.draw();
 
     });
+
+
+
+
+    center.on('click', function () {
+      /*this.stroke("yellow");
+       this.fill("yellow");
+     */
+    if(click == false)
+    {
+      click = true;
+      var symbol = teethInstance.getCurrentSymbol();
+      console.log(symbol);
+      if (symbol.validations.fullTeeth == false) {
+        if ((symbol.validations.onlyTopBorder == true && rotation > 0)) {
+          this.moveToTop();
+          this.fill(symbol.validations.color);
+        }
+
+
+        if ((symbol.validations.onlyBottomBorder == true && rotation == 0)) {
+          this.moveToTop();
+          this.fill(symbol.validations.color);
+        }
+      } else {
+        this.moveToBottom();
+
+      }
+
+      teethInstance.stage.draw();
+      document.getElementById("contenedor").style.cursor = 'pointer';
+    }
+    else
+    {
+   
+    }
+    
+    });
+
+
+
 
     return center;
 
