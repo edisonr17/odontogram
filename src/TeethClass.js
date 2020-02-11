@@ -38,7 +38,9 @@ class TeethClass extends BaseOdontogram {
     
     group.add(this.drawNumber(x, y, teethId));
 
-    group.add(this.drawContainer(x, y, 18, 22, "container" + teethId));
+    group.add(this.drawBorderContainer(x, y, 18, 22, "container" + teethId,0));
+    group.add(this.drawBorderContainer(x, y, 18, 22, "container" + teethId,180) );
+
     group.add(this.fullTeethContainer(x, y, 22, "fullTeeth" + teethId));
     group.add(this.drawCenter(x, y, 8, "center" + teethId));
     
@@ -128,10 +130,10 @@ class TeethClass extends BaseOdontogram {
       x: x,
       y: y,
       id: teethId,
-      radius: radius,
+      radius: radius-2,
       fill: 'rgba(0,0,0,0)',
-      stroke: 'black',
-      strokeWidth: 4
+      stroke: 'rgba(0,0,0,0)',
+      strokeWidth: 1
     });
     circle.on('mouseover', function () {
       /*this.stroke("yellow");
@@ -393,18 +395,19 @@ class TeethClass extends BaseOdontogram {
 
 
 
-  drawContainer(x, y, minRadius, maxRadius, teethId) {
+  drawBorderContainer(x, y, minRadius, maxRadius, teethId, rotation) {
+    
     var teethInstance = this;
-    var center = new Konva.Ring({
+    var center = new Konva.Arc({
       x: x,
       y: y,
       id: teethId,
-      innerRadius: minRadius,
-      outerRadius: maxRadius,
-      angle: 361,
-      fill: "#2E9AFE",
-      stroke: '2E9AFE',
-      rotation: 0,
+      innerRadius: minRadius +1,
+      outerRadius: maxRadius + 1,
+      angle: 180,
+      fill: "#000",
+      stroke: '',
+      rotation: rotation,
       strokeWidth: 1,
 
     });
@@ -418,8 +421,8 @@ class TeethClass extends BaseOdontogram {
       } else {
         this.moveToBottom();
       }
-      this.fill("#5858FA");
-      this.draw();
+      this.fill("red");
+      teethInstance.stage.draw();
       document.getElementById("contenedor").style.cursor = 'pointer';
     });
 
@@ -427,9 +430,9 @@ class TeethClass extends BaseOdontogram {
       // this.stroke("black");
       // this.fill("black");
 
-      this.fill("#2E9AFE");
+      this.fill("#000");
       document.getElementById("contenedor").style.cursor = 'default';
-      this.draw();
+      teethInstance.stage.draw();
 
     });
 

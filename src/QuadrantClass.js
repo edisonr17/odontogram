@@ -86,6 +86,7 @@
 
 
       drawCuadrantTitle(x, y, cuadrant) {
+          var click = false;
           var cuadrantTitle = new Konva.Text({
               x: x + 15,
               y: y,
@@ -102,7 +103,7 @@
               height: 10,
               fill: 'white',
               stroke: 'black',
-              strokeWidth: 1
+              strokeWidth: 3
           });
 
           check.on("mouseover", function () {
@@ -113,6 +114,24 @@
 
               document.getElementById("contenedor").style.cursor = 'default';
 
+          });
+
+          check.on("click", function(){
+            if(click == false)
+            {
+                this.fill("blue");
+                this.stroke("gray");
+
+                click = true;
+            }
+            else
+            {
+                this.fill("white");
+                this.stroke("black");
+
+                click = false;
+            }
+            stage.draw();
           });
 
 
@@ -134,7 +153,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen4.png",
                   srcIcon: "./resources/symbols/marcas/Imagen4_icon.png",
@@ -146,7 +166,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen5.png",
                   srcIcon: "./resources/symbols/marcas/Imagen5_icon.png",
@@ -158,7 +179,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen6.png",
                   srcIcon: "./resources/symbols/marcas/Imagen6_icon.png",
@@ -170,7 +192,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen7.png",
                   srcIcon: "./resources/symbols/marcas/Imagen7_icon.png",
@@ -182,7 +205,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen8.png",
                   srcIcon: "./resources/symbols/marcas/Imagen8_icon.png",
@@ -194,7 +218,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen9.png",
                   srcIcon: "./resources/symbols/marcas/Imagen9_icon.png",
@@ -206,7 +231,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen10.png",
                   srcIcon: "./resources/symbols/marcas/Imagen10_icon.png",
@@ -218,7 +244,8 @@
                 validations: {
                     fullTeeth: true,
                     onlyCenter: false,
-                    onlyFace: false
+                    onlyFace: false,
+                    onlyTopBorder: false, onlyBottomBorder:false
                 },
                 src: "./resources/symbols/marcas/Imagen11.png",
                 srcIcon: "./resources/symbols/marcas/Imagen11_icon.png",
@@ -230,7 +257,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen12.png",
                   srcIcon: "./resources/symbols/marcas/Imagen12_icon.png",
@@ -242,7 +270,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen13.png",
                   srcIcon: "./resources/symbols/marcas/Imagen13_icon.png",
@@ -254,7 +283,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen14.png",
                   srcIcon: "./resources/symbols/marcas/Imagen14_icon.png",
@@ -266,7 +296,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen15.png",
                   srcIcon: "./resources/symbols/marcas/Imagen15_icon.png",
@@ -278,18 +309,46 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen16.png",
                   srcIcon: "./resources/symbols/marcas/Imagen16_icon.png",
                   tittle: "Poroso 4"
-              }, {
+              },
+              {
                 id: 6,
                 name: "poroso",
                 validations: {
                     fullTeeth: true,
                     onlyCenter: false,
-                    onlyFace: false
+                    onlyFace: false,
+                    onlyTopBorder: false, onlyBottomBorder:false
+                },
+                src: "./resources/symbols/marcas/Imagen17.png",
+                srcIcon: "./resources/symbols/marcas/Imagen17_icon.png",
+                tittle: "Poroso 4"
+            }, 
+            {
+                id: 6,
+                name: "poroso",
+                validations: {
+                    fullTeeth: true,
+                    onlyCenter: false,
+                    onlyFace: false,
+                    onlyTopBorder: false, onlyBottomBorder:false
+                },
+                src: "./resources/symbols/marcas/Imagen18.png",
+                srcIcon: "./resources/symbols/marcas/Imagen18_icon.png",
+                tittle: "Poroso 4"
+            },  {
+                id: 6,
+                name: "poroso",
+                validations: {
+                    fullTeeth: true,
+                    onlyCenter: false,
+                    onlyFace: false,
+                    onlyTopBorder: false, onlyBottomBorder:false
                 },
                 src: "./resources/symbols/marcas/Imagen19.png",
                 srcIcon: "./resources/symbols/marcas/Imagen19_icon.png",
@@ -301,7 +360,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen20.png",
                   srcIcon: "./resources/symbols/marcas/Imagen20_icon.png",
@@ -313,7 +373,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen21.png",
                   srcIcon: "./resources/symbols/marcas/Imagen21_icon.png",
@@ -325,7 +386,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen22.png",
                   srcIcon: "./resources/symbols/marcas/Imagen22_icon.png",
@@ -337,7 +399,8 @@
                   validations: {
                       fullTeeth: false,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen23.png",
                   srcIcon: "./resources/symbols/marcas/Imagen23_icon.png",
@@ -349,7 +412,8 @@
                   validations: {
                       fullTeeth: false,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen24.png",
                   srcIcon: "./resources/symbols/marcas/Imagen24_icon.png",
@@ -361,7 +425,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen25.png",
                   srcIcon: "./resources/symbols/marcas/Imagen25_icon.png",
@@ -373,7 +438,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen26.png",
                   srcIcon: "./resources/symbols/marcas/Imagen26_icon.png",
@@ -385,7 +451,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen27.png",
                   srcIcon: "./resources/symbols/marcas/Imagen27_icon.png",
@@ -397,7 +464,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen28.png",
                   srcIcon: "./resources/symbols/marcas/Imagen28_icon.png",
@@ -409,7 +477,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen29.png",
                   srcIcon: "./resources/symbols/marcas/Imagen29_icon.png",
@@ -421,7 +490,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen30.png",
                   srcIcon: "./resources/symbols/marcas/Imagen30_icon.png",
@@ -433,7 +503,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen31.png",
                   srcIcon: "./resources/symbols/marcas/Imagen31_icon.png",
@@ -445,7 +516,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen32.png",
                   srcIcon: "./resources/symbols/marcas/Imagen32_icon.png",
@@ -457,7 +529,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/ImagenBorrador.png",
                   srcIcon: "./resources/symbols/marcas/Imagen33_icon.png",
@@ -469,7 +542,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen34.png",
                   srcIcon: "./resources/symbols/marcas/Imagen34_icon.png",
@@ -481,7 +555,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen35.png",
                   srcIcon: "./resources/symbols/marcas/Imagen35_icon.png",
@@ -493,7 +568,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen36.png",
                   srcIcon: "./resources/symbols/marcas/Imagen36_icon.png",
@@ -505,7 +581,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen38.png",
                   srcIcon: "./resources/symbols/marcas/Imagen38_icon.png",
@@ -517,7 +594,8 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/Imagen39.png",
                   srcIcon: "./resources/symbols/marcas/Imagen39_icon.png",
