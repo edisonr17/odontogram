@@ -5,6 +5,23 @@ class TeethClass extends BaseOdontogram {
   /**
    * Metodo que dibuja un diente completo
    */
+  drawNumber(x, y, teethNumber)
+  {
+    console.log();
+    var simpleText = new Konva.Text({
+      x: x-23,
+      y: y+21,
+      text: teethNumber,
+      fontSize: 10,
+      fill: '#555',
+
+      fontFamily: 'Calibri',
+      fill: 'black'
+    });
+    return simpleText;
+  }
+
+
   drawTeeth(x, y, teethId) {
     var background = this.getInstanceImageBackground(this.getCurrentBackground());
     var symbol = this.getCurrentSymbol();
@@ -18,10 +35,13 @@ class TeethClass extends BaseOdontogram {
       this.drawFace(180 - 45, 90, this.stage, this.layer, x, y, "white", "bottom" + teethId),
       this.drawFace(270 - 45, 90, this.stage, this.layer, x, y, "white", "left" + teethId)
     ];
+    
+    group.add(this.drawNumber(x, y, teethId));
+
     group.add(this.drawContainer(x, y, 18, 22, "container" + teethId));
     group.add(this.fullTeethContainer(x, y, 22, "fullTeeth" + teethId));
     group.add(this.drawCenter(x, y, 8, "center" + teethId));
-
+    
     for (var k = 0; k < 4; k++) {
       group.add(faces[k]);
 
