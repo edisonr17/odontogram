@@ -6,13 +6,22 @@ class TeethClass extends BaseOdontogram {
    * Metodo que dibuja un diente completo
    */
   drawNumber(x, y, teethNumber) {
-    console.log();
+    if((teethNumber >= 11 && teethNumber <=18) || (teethNumber >=51 && teethNumber <=55) || (teethNumber >=42 && teethNumber <=48)|| (teethNumber >=81 && teethNumber <=85))
+    {
+      x = x - 23;
+
+    }
+    else
+    {
+      x =  x + 20 ;
+
+    }
     var simpleText = new Konva.Text({
-      x: x - 23,
-      y: y + 17,
+      x: x ,
+      y: y + 18,
       text: teethNumber,
       fontSize: 10,
-      fill: '#555',
+      fill: 'blue',
 
       fontFamily: 'Calibri',
       fill: 'black'
