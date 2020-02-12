@@ -86,6 +86,7 @@
 
 
       drawCuadrantTitle(x, y, cuadrant) {
+          var click = false;
           var cuadrantTitle = new Konva.Text({
               x: x + 15,
               y: y,
@@ -102,7 +103,7 @@
               height: 10,
               fill: 'white',
               stroke: 'black',
-              strokeWidth: 1
+              strokeWidth: 3
           });
 
           check.on("mouseover", function () {
@@ -113,6 +114,24 @@
 
               document.getElementById("contenedor").style.cursor = 'default';
 
+          });
+
+          check.on("click", function(){
+            if(click == false)
+            {
+                this.fill("blue");
+                this.stroke("gray");
+
+                click = true;
+            }
+            else
+            {
+                this.fill("white");
+                this.stroke("black");
+
+                click = false;
+            }
+            stage.draw();
           });
 
 
@@ -132,48 +151,52 @@
                   id: 1,
                   name: "Caries",
                   validations: {
-                      fullTeeth: false,
+                      fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: true
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
-                  src: "./resources/symbols/caries.png",
-                  srcIcon: "./resources/symbols/cariesIcon.png",
+                  src: "./resources/symbols/marcas/Imagen4.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen4_icon.png",
                   tittle: "Simbolo 1"
               },
               {
                   id: 2,
                   name: "Fractura",
                   validations: {
-                      fullTeeth: false,
-                      onlyCenter: true,
-                      onlyFace: false
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
-                  src: "./resources/symbols/caries2.png",
-                  srcIcon: "./resources/symbols/caries3Icon.png",
+                  src: "./resources/symbols/marcas/Imagen5.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen5_icon.png",
                   tittle: "Fractura 1"
               },
               {
                   id: 3,
                   name: "Sellante",
                   validations: {
-                      fullTeeth: false,
+                      fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
-                  src: "./resources/symbols/caries3.png",
-                  srcIcon: "./resources/symbols/caries3Icon.png",
+                  src: "./resources/symbols/marcas/Imagen6.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen6_icon.png",
                   tittle: "Sellante 1"
               },
               {
                   id: 4,
                   name: "Caries",
                   validations: {
-                      fullTeeth: false,
+                      fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
-                  src: "./resources/symbols/toolsExample.png",
-                  srcIcon: "./resources/symbols/toolsExampleIcon.png",
+                  src: "./resources/symbols/marcas/Imagen7.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen7_icon.png",
                   tittle: "Caries 2"
               },
               {
@@ -182,10 +205,11 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
-                  src: "./resources/symbols/implante.png",
-                  srcIcon: "./resources/symbols/icon1icon.png",
+                  src: "./resources/symbols/marcas/Imagen8.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen8_icon.png",
                   tittle: "Fractura de otro tipo 3"
               },
               {
@@ -194,10 +218,392 @@
                   validations: {
                       fullTeeth: true,
                       onlyCenter: false,
-                      onlyFace: false
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
                   },
-                  src: "./resources/symbols/icon5.png",
-                  srcIcon: "./resources/symbols/icon5Icon.png",
+                  src: "./resources/symbols/marcas/Imagen9.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen9_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 7,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen10.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen10_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                id: 8,
+                name: "poroso",
+                validations: {
+                    fullTeeth: true,
+                    onlyCenter: false,
+                    onlyFace: false, isEraser: false,
+                    onlyTopBorder: false, onlyBottomBorder:false
+                },
+                src: "./resources/symbols/marcas/Imagen11.png",
+                srcIcon: "./resources/symbols/marcas/Imagen11_icon.png",
+                tittle: "Poroso 4"
+            },
+              {
+                  id: 8,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen12.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen12_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen13.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen13_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen14.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen14_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen15.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen15_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen16.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen16_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                id: 6,
+                name: "poroso",
+                validations: {
+                    fullTeeth: false,
+                    onlyCenter: false,
+                    onlyFace: false, 
+                    isEraser: false,
+                    onlyTopBorder: true, 
+                    onlyBottomBorder:false, 
+                    color:"blue"
+                },
+                src: "./resources/symbols/marcas/Imagen17.png",
+                srcIcon: "./resources/symbols/marcas/Imagen17_icon.png",
+                tittle: "Poroso 4"
+            }, 
+            {
+                id: 6,
+                name: "poroso",
+                validations: {
+                    fullTeeth: false,
+                    onlyCenter: false,
+                    onlyFace: false, isEraser: false,
+                    onlyTopBorder: true, onlyBottomBorder:false, color:"red"
+                },
+                src: "./resources/symbols/marcas/Imagen18.png",
+                srcIcon: "./resources/symbols/marcas/Imagen18_icon.png",
+                tittle: "Poroso 4"
+            },  {
+                id: 6,
+                name: "poroso",
+                validations: {
+                    fullTeeth: true,
+                    onlyCenter: false,
+                    onlyFace: false, isEraser: false,
+                    onlyTopBorder: false, onlyBottomBorder:false
+                },
+                src: "./resources/symbols/marcas/Imagen19.png",
+                srcIcon: "./resources/symbols/marcas/Imagen19_icon.png",
+                tittle: "Poroso 4"
+            },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen20.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen20_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: false,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:true, color:"blue"
+                  },
+                  src: "./resources/symbols/marcas/Imagen21.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen21_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: false,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, 
+                      onlyBottomBorder:true,
+                      color:"red"
+                  },
+                  src: "./resources/symbols/marcas/Imagen22.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen22_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: false,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen23.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen23_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: false,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen24.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen24_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen25.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen25_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen26.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen26_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen27.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen27_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen28.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen28_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen29.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen29_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen30.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen30_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen31.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen31_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen32.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen32_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/ImagenBorrador.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen33_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen34.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen34_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen35.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen35_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen36.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen36_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 6,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen38.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen38_icon.png",
+                  tittle: "Poroso 4"
+              },
+              {
+                  id: 39,
+                  name: "poroso",
+                  validations: {
+                      fullTeeth: true,
+                      onlyCenter: false,
+                      onlyFace: false, isEraser: false,
+                      onlyTopBorder: false, onlyBottomBorder:false
+                  },
+                  src: "./resources/symbols/marcas/Imagen39.png",
+                  srcIcon: "./resources/symbols/marcas/Imagen39_icon.png",
                   tittle: "Poroso 4"
               }
           ];
@@ -254,8 +660,8 @@
               });
               tool.on('mouseover', function (evt) {
                   this.stroke("black");
-                  this.scaleY(2);
-                  this.scaleX(2);
+                  this.scaleY(1.5);
+                  this.scaleX(1.5);
                   this.moveToTop();
                   toolsInstance.setTittle(symbol.tittle);
                   document.getElementById("contenedor").style.cursor = 'pointer';
@@ -345,13 +751,13 @@
                   }
 
                   images[location] = this.getItemTool(xinitialCalculated, yinitialCalculated, symbols[location], location);
-                  xinitialCalculated = xinitialCalculated + longColumn * .8;
+                  xinitialCalculated = xinitialCalculated + longColumn * .7;
                   columnaActual = columnaActual + 1;
               } else {
 
                   images[location] = this.getItemTool(xinitialCalculated, yinitialCalculated, symbols[location], location);
 
-                  yinitialCalculated = yinitialCalculated + longColumn;
+                  yinitialCalculated = yinitialCalculated + longColumn - 20;
                   columnaActual = 1;
 
               }

@@ -4,11 +4,11 @@ class odontogram extends QuadrantClass {
      * @param xmax tamaño maximo en x
      * @param ymax tamaño maximo en y
      */
-
+    
     drawDivs(xmax, ymax) {
 
         var verticalLine = new Konva.Line({
-            points: [xmax / 2, 0, xmax / 2, ymax],
+            points: [xmax / 2, +40, xmax / 2, ymax  * .5 - 40],
             fill: '#00D2FF',
             stroke: 'black',
             strokeWidth: 1,
@@ -16,19 +16,28 @@ class odontogram extends QuadrantClass {
         });
         this.layer.add(verticalLine);
 
-        var middleHorizontalLine = new Konva.Line({
-            points: [0, ymax / 2, xmax, ymax / 2],
+        var verticalLine2 = new Konva.Line({
+            points: [xmax / 2, ymax/2 +40, xmax / 2, ymax -40],
             fill: '#00D2FF',
             stroke: 'black',
             strokeWidth: 1,
             closed: true
         });
+        this.layer.add(verticalLine2);
+
+ /*       var middleHorizontalLine = new Konva.Line({
+            points: [0, ymax / 2, xmax, ymax / 2],
+            fill: '#00D2FF',
+            stroke: 'black',
+            strokeWidth: 2,
+            closed: true
+        });*/
 
         var initialQuarterHOrizontal = new Konva.Line({
             points: [0, ymax / 4, xmax, ymax / 4],
             fill: '#00D2FF',
             stroke: 'black',
-            strokeWidth: 1,
+            strokeWidth: 2,
             closed: true
         });
 
@@ -36,13 +45,13 @@ class odontogram extends QuadrantClass {
             points: [0, ymax / 4 + ymax / 2, xmax, ymax / 4 + ymax / 2],
             fill: '#00D2FF',
             stroke: 'black',
-            strokeWidth: 1,
+            strokeWidth: 2,
             closed: true
         });
 
 
-        this.layer.add(middleHorizontalLine);
-        this.layer.add(middleHorizontalLine);
+      //  this.layer.add(middleHorizontalLine);
+     //   this.layer.add(middleHorizontalLine);
         this.layer.add(initialQuarterHOrizontal);
         this.layer.add(finalQuarterHOrizontal);
 
@@ -57,12 +66,12 @@ class odontogram extends QuadrantClass {
         var altoOdontogram = ymax / 2;
         this.drawCuadrant(xmax, ymax, 1, yinitial, anchoOdontogram, altoOdontogram, this.getTeethsByQuadrant("quadrant1Boy"));
         this.drawCuadrantTitle(0 + 10, ymax / 2 + 10, 'I - Odontograma de Niño');
-       this.drawCuadrant(xmax, ymax, 2, yinitial, anchoOdontogram, altoOdontogram, this.getTeethsByQuadrant("quadrant2Boy"));
-        this.drawCuadrantTitle(xmax * .85 / 2 + 10, ymax / 2 + 10, 'II');
+         this.drawCuadrant(xmax, ymax, 2, yinitial, anchoOdontogram, altoOdontogram, this.getTeethsByQuadrant("quadrant2Boy"));
+        this.drawCuadrantTitle(xmax * .85 / 2 * 2-30, ymax / 2 + 10, 'II');
         this.drawCuadrant(xmax, ymax, 3, yinitial, anchoOdontogram, altoOdontogram , this.getTeethsByQuadrant("quadrant4Boy"));
         this.drawCuadrantTitle(0 + 10, ymax / 4 + ymax / 2 + 10, 'IV');
         this.drawCuadrant(xmax, ymax, 4, yinitial, anchoOdontogram, altoOdontogram,  this.getTeethsByQuadrant("quadrant3Boy"));
-        this.drawCuadrantTitle(xmax * .85 / 2 + 10, ymax / 4 + ymax / 2 + 10, 'III');
+        this.drawCuadrantTitle(xmax * .85 / 2 * 2-30 , ymax / 4 + ymax / 2 + 10, 'III');
 
 
 
@@ -79,16 +88,16 @@ class odontogram extends QuadrantClass {
         this.drawCuadrantTitle(0 + 10, 0 + 10, 'I - Odontograma Adulto');
     
         this.drawCuadrant(xmax * .85 / 2, ymax, 2, 1, anchoOdontogram, altoOdontogram,this.getTeethsByQuadrant("quadrant2"));
-        this.drawCuadrantTitle(xmax * .85 / 2 + 10, 0 + 10, 'II');
+        this.drawCuadrantTitle(xmax * .85 / 2 * 2-30 + 10, 0 + 10, 'II');
             /**Dibja el cuadrante 3 */
          this.drawCuadrant(xmax, ymax, 3, 1, anchoOdontogram, altoOdontogram, this.getTeethsByQuadrant("quadrant4"));
         this.drawCuadrantTitle(0 + 10, ymax / 4 + 10, 'IV');
         /*** Dibuja el cuadrante 4  */
          this.drawCuadrant(xmax, ymax, 4, 1, anchoOdontogram, altoOdontogram, this.getTeethsByQuadrant("quadrant3"));
-         this.drawCuadrantTitle(xmax * .85 / 2 + 10, ymax / 4 + 10, 'III');
+         this.drawCuadrantTitle(xmax * .85 / 2 * 2-30, ymax / 4 + 10, 'III');
     }
 
-
+    
 
 
 
