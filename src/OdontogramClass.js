@@ -8,7 +8,7 @@ class odontogram extends QuadrantClass {
     drawDivs(xmax, ymax) {
 
         var verticalLine = new Konva.Line({
-            points: [xmax / 2, 0, xmax / 2, ymax],
+            points: [xmax / 2, +40, xmax / 2, ymax  * .5 - 40],
             fill: '#00D2FF',
             stroke: 'black',
             strokeWidth: 1,
@@ -16,13 +16,22 @@ class odontogram extends QuadrantClass {
         });
         this.layer.add(verticalLine);
 
-        var middleHorizontalLine = new Konva.Line({
+        var verticalLine2 = new Konva.Line({
+            points: [xmax / 2, ymax/2 +40, xmax / 2, ymax -40],
+            fill: '#00D2FF',
+            stroke: 'black',
+            strokeWidth: 1,
+            closed: true
+        });
+        this.layer.add(verticalLine2);
+
+ /*       var middleHorizontalLine = new Konva.Line({
             points: [0, ymax / 2, xmax, ymax / 2],
             fill: '#00D2FF',
             stroke: 'black',
             strokeWidth: 2,
             closed: true
-        });
+        });*/
 
         var initialQuarterHOrizontal = new Konva.Line({
             points: [0, ymax / 4, xmax, ymax / 4],
@@ -41,8 +50,8 @@ class odontogram extends QuadrantClass {
         });
 
 
-        this.layer.add(middleHorizontalLine);
-        this.layer.add(middleHorizontalLine);
+      //  this.layer.add(middleHorizontalLine);
+     //   this.layer.add(middleHorizontalLine);
         this.layer.add(initialQuarterHOrizontal);
         this.layer.add(finalQuarterHOrizontal);
 

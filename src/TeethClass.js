@@ -37,7 +37,7 @@ class TeethClass extends BaseOdontogram {
 
     group.add(this.drawNumber(x, y, teethId));
 
-    group.add(this.drawBorder(x,y, 18,22, "container"+teethId))
+    group.add(this.drawBorder(x,y, 18,22, "container"+teethId));
     group.add(this.drawBorderContainer(x, y, 18, 22, "borderTop" + teethId, 0));
     group.add(this.drawBorderContainer(x, y, 18, 22, "borderBottom" + teethId, 180));
 
