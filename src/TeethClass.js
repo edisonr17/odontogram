@@ -37,8 +37,9 @@ class TeethClass extends BaseOdontogram {
 
     group.add(this.drawNumber(x, y, teethId));
 
-    group.add(this.drawBorderContainer(x, y, 18, 22, "container" + teethId, 0));
-    group.add(this.drawBorderContainer(x, y, 18, 22, "container" + teethId, 180));
+    group.add(this.drawBorder(x,y, 18,22, "container"+teethId))
+    group.add(this.drawBorderContainer(x, y, 18, 22, "borderTop" + teethId, 0));
+    group.add(this.drawBorderContainer(x, y, 18, 22, "borderBottom" + teethId, 180));
 
     group.add(this.fullTeethContainer(x, y, 22, "fullTeeth" + teethId));
     group.add(this.drawCenter(x, y, 8, "center" + teethId));
@@ -63,7 +64,7 @@ class TeethClass extends BaseOdontogram {
     var teethInstance = this;
     var stage = this.stage;
     var group = new Konva.Group({
-      draggable: true,
+      draggable: false,
       drawBorder: false,
       width: 40,
       height: 40,
@@ -129,7 +130,7 @@ class TeethClass extends BaseOdontogram {
       x: x,
       y: y,
       id: teethId,
-      radius: radius - 2,
+      radius: radius - 3,
       fill: 'rgba(0,0,0,0)',
       stroke: 'rgba(0,0,0,0)',
       strokeWidth: 1
@@ -406,12 +407,12 @@ class TeethClass extends BaseOdontogram {
       x: x,
       y: y,
       id: teethId,
-      innerRadius: minRadius + 1,
-      outerRadius: maxRadius + 1,
-      angle: 180,
+      innerRadius: minRadius + 2,
+      outerRadius: maxRadius +2 ,
+      angle: 90,
       fill: "#A4A4A4",
       stroke: '',
-      rotation: rotation,
+      rotation: rotation + 45,
       strokeWidth: 2,
 
     });
@@ -422,13 +423,13 @@ class TeethClass extends BaseOdontogram {
       var symbol = teethInstance.getCurrentSymbol();
       console.log(symbol);
       if (symbol.validations.fullTeeth == false) {
-        if ((symbol.validations.onlyTopBorder == true && rotation > 0)) {
+        if ((symbol.validations.onlyTopBorder == true && rotation > 0) && click == false) {
           this.moveToTop();
           this.fill(symbol.validations.color);
         }
 
 
-        if ((symbol.validations.onlyBottomBorder == true && rotation == 0)) {
+        if ((symbol.validations.onlyBottomBorder == true && rotation == 0 && click == false)) {
           this.moveToTop();
           this.fill(symbol.validations.color);
         }
@@ -461,22 +462,24 @@ class TeethClass extends BaseOdontogram {
        this.fill("yellow");
      */
       if (click == false) {
-        click = true;
         var symbol = teethInstance.getCurrentSymbol();
-        console.log(symbol);
         if (symbol.validations.fullTeeth == false) {
+
           if ((symbol.validations.onlyTopBorder == true && rotation > 0)) {
+            click = true;
+
             this.moveToTop();
             this.fill(symbol.validations.color);
           }
 
 
           if ((symbol.validations.onlyBottomBorder == true && rotation == 0)) {
+            click = true;
+
             this.moveToTop();
             this.fill(symbol.validations.color);
           }
         } else {
-          this.moveToBottom();
 
         }
 
@@ -495,6 +498,33 @@ class TeethClass extends BaseOdontogram {
 
   }
 
+
+
+
+  drawBorder(x, y, minRadius, maxRadius, teethId) {
+
+    var teethInstance = this;
+    var click = false;
+    var center = new Konva.Arc({
+      x: x,
+      y: y,
+      id: teethId,
+      innerRadius: minRadius ,
+      outerRadius: maxRadius  ,
+      angle: 360,
+      fill: "#A4A4A4",
+      stroke: '',
+      strokeWidth: 1,
+
+    });
+
+
+
+
+
+    return center;
+
+  }
 
 
 
