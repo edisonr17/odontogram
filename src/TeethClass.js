@@ -239,18 +239,21 @@ class TeethClass extends BaseOdontogram {
       if (click == false) {
         var symbol = teethInstance.getCurrentSymbol();
         if (symbol.validations.fullTeeth != true) {
-          this.fillPatternOffset({
-            x: 22,
-            y: 25
-          });
+          var resultValidations = teethInstance.validationClickOnTeeth(center, symbol, "center");
+          if (resultValidations.status == true) {
+            this.fillPatternOffset({
+              x: 22,
+              y: 25
+            });
 
-          background.src = teethInstance.getCurrentBackground();
-          this.stroke("blue");
-          this.strokeWidth(2);
-          this.fillPatternImage(background);
-          // console.log(background);
+            background.src = teethInstance.getCurrentBackground();
+            this.stroke("blue");
+            this.strokeWidth(2);
+            this.fillPatternImage(background);
+            // console.log(background);
 
-          teethInstance.stage.draw();
+            teethInstance.stage.draw();
+          }
         }
       }
 
@@ -457,35 +460,32 @@ class TeethClass extends BaseOdontogram {
       /*this.stroke("yellow");
        this.fill("yellow");
      */
-    if(click == false)
-    {
-      click = true;
-      var symbol = teethInstance.getCurrentSymbol();
-      console.log(symbol);
-      if (symbol.validations.fullTeeth == false) {
-        if ((symbol.validations.onlyTopBorder == true && rotation > 0)) {
-          this.moveToTop();
-          this.fill(symbol.validations.color);
-        }
+      if (click == false) {
+        click = true;
+        var symbol = teethInstance.getCurrentSymbol();
+        console.log(symbol);
+        if (symbol.validations.fullTeeth == false) {
+          if ((symbol.validations.onlyTopBorder == true && rotation > 0)) {
+            this.moveToTop();
+            this.fill(symbol.validations.color);
+          }
 
 
-        if ((symbol.validations.onlyBottomBorder == true && rotation == 0)) {
-          this.moveToTop();
-          this.fill(symbol.validations.color);
+          if ((symbol.validations.onlyBottomBorder == true && rotation == 0)) {
+            this.moveToTop();
+            this.fill(symbol.validations.color);
+          }
+        } else {
+          this.moveToBottom();
+
         }
+
+        teethInstance.stage.draw();
+        document.getElementById("contenedor").style.cursor = 'pointer';
       } else {
-        this.moveToBottom();
 
       }
 
-      teethInstance.stage.draw();
-      document.getElementById("contenedor").style.cursor = 'pointer';
-    }
-    else
-    {
-   
-    }
-    
     });
 
 

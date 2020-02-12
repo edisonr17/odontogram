@@ -69,7 +69,7 @@ class BaseOdontogram {
     if (symbol == null) {
       return false;
     }
-    if ((symbol.validations.fullTeeth == false && symbol.validations.onlyCenter == false && symbol.validations.onlyFace == false)) {
+    if ((symbol.validations.fullTeeth == false && symbol.validations.onlyCenter == false && symbol.validations.onlyFace == false && ( symbol.validations.onlyTopBorder != true && symbol.validations.onlyBottomBorder != true))) {
       return true;
     } else {
       return false;
