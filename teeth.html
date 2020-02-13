@@ -17,6 +17,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
   </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
   <style>
     #container {
       margin: 0;
@@ -29,23 +33,28 @@
   </style>
 </head>
 
-<body>
-  <div class='container' id="contenedor">
-    <h1>Odontograma</h1>
-   <!--<label ><input type='checkbox' >Ocultar Odontograma de adulto</label>
-   <br>
-   <label ><input type='checkbox' >Ocultar Odontograma de niño</label>
-   <br>-->
-   <label ><input type='checkbox' >Juego completo de RX periapical</label>
-      <div id="container"></div>
-
+<body ng-app="odontogramApp">
+  <div class="container">
+    <div class='row-fluid'>
+        <div class='container' id="contenedor">
+            <h1>Odontograma</h1>
+           <!--<label ><input type='checkbox' >Ocultar Odontograma de adulto</label>
+           <br>
+           <label ><input type='checkbox' >Ocultar Odontograma de niño</label>
+           <br>-->
+           <label ><input type='checkbox' >Juego completo de RX periapical</label>
+              <div id="container"></div>
+        
+          </div>
+    </div>
   </div>
+
   <script src="src/BaseOdontogram.js"></script>
   <script src="src/TeethClass.js" ></script>
   <script src="src/QuadrantClass.js"></script>
   <script src="src/OdontogramClass.js"></script>
   <script src="main.js"></script>
-  
+
 </body>
 
 </html>

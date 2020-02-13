@@ -1,4 +1,10 @@
 
+var app = angular.module("odontogramApp", []);
+
+app.controller("myCtrl", function($scope) {
+  $scope.firstName = "John";
+  $scope.lastName = "Doe";
+});
 
 var stage = new Konva.Stage({
     container: 'container',

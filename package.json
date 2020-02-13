@@ -6,13 +6,14 @@
   "scripts": {
     "test": "testOd",
     "build": "webpack --config=webpack.config.js"
-    },
+  },
   "keywords": [
     "odontograma"
   ],
   "author": "Edison Rave",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.7.9",
     "babel-core": "^6.26.3",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
