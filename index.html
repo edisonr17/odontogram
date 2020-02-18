@@ -1,7 +1,62 @@
 <!DOCTYPE html>
 <html>
-    <body>
-      
-        <script src="/dist/main.bundle.js"></script>        
-    </body>
+
+<head>
+  <script src="https://unpkg.com/konva@4.1.2/konva.min.js"></script>
+  <meta charset="utf-8" />
+  <title>Konva Arc Demo</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+  </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+  <style>
+    #container {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color:white;
+      width: 1024px;
+      height: 700px;
+    }
+  </style>
+</head>
+
+<body ng-app="odontogramApp">
+  <div class="container">
+    <div class='row-fluid'>
+        <sglo-odontogram></sglo-odontogram>
+
+         <!-- <div class='container' id="contenedor">
+            <h1>Odontograma</h1>
+         <label ><input type='checkbox' >Ocultar Odontograma de adulto</label>
+           <br>
+           <label ><input type='checkbox' >Ocultar Odontograma de niño</label>
+           <br>
+           <label ><input type='checkbox' >Juego completo de RX periapical</label>
+              <div id="container"></div>
+        
+          </div> -->
+    </div>
+  </div>
+
+  <script src="src/BaseOdontogram.js"></script>
+  <script src="src/TeethClass.js" ></script>
+  <script src="src/QuadrantClass.js"></script>
+  <script src="src/OdontogramClass.js"></script>
+  <script src="main.js"></script> 
+
+</body>
+
 </html>
