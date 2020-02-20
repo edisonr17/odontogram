@@ -144,13 +144,13 @@ class BaseOdontogram {
             position: "jhuhi",
             sections: {
               top: {name:"iuhiu"},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -160,14 +160,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -177,14 +177,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+              borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -194,14 +194,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -211,14 +211,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -228,14 +228,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -245,14 +245,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -262,14 +262,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -283,14 +283,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -300,14 +300,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -317,14 +317,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -334,14 +334,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -351,14 +351,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -368,14 +368,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -385,14 +385,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -402,14 +402,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -423,14 +423,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -440,14 +440,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -457,14 +457,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -474,14 +474,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -491,14 +491,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -508,14 +508,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -525,14 +525,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -542,14 +542,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -563,14 +563,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -580,14 +580,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -597,14 +597,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -614,14 +614,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -631,14 +631,15 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null},
+             borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -648,14 +649,15 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, 
+             borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -665,14 +667,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -682,14 +684,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -717,14 +719,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -734,14 +736,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -751,14 +753,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -768,14 +770,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -785,14 +787,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -809,14 +811,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -826,14 +828,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -843,14 +845,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -860,14 +862,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -877,14 +879,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -898,14 +900,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -915,14 +917,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -932,14 +934,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -949,14 +951,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -966,14 +968,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -986,14 +988,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -1003,14 +1005,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -1020,14 +1022,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -1037,14 +1039,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
@@ -1054,14 +1056,14 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-              top: {},
-              left: {},
-              down: {},
-              right: {},
-              center: {},
-              external: {},
+             top: {symbols : null},
+             left: {symbols : null},
+             down: {symbols : null},
+             right: {symbols : null},
+             center: {symbols : null},
+         borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
-                status: ""
+                status: false, symbol:null
               }
             }
           },
