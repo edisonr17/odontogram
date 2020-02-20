@@ -160,7 +160,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -177,7 +177,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -194,7 +194,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -211,7 +211,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -228,7 +228,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -245,7 +245,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -262,7 +262,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -283,7 +283,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -300,7 +300,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -317,7 +317,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -334,7 +334,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -351,7 +351,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -368,7 +368,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -385,7 +385,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -402,7 +402,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -423,7 +423,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -440,7 +440,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -457,7 +457,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -474,7 +474,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -491,7 +491,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -508,7 +508,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -525,7 +525,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -542,7 +542,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -563,7 +563,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -580,7 +580,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -597,7 +597,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -614,7 +614,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -631,7 +631,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -649,7 +649,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -667,7 +667,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -684,7 +684,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -719,7 +719,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -736,7 +736,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -753,7 +753,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -770,7 +770,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -787,7 +787,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -811,7 +811,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -828,7 +828,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -845,7 +845,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -862,7 +862,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -879,7 +879,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -900,7 +900,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -917,7 +917,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -934,7 +934,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -951,7 +951,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -968,7 +968,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -988,7 +988,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -1005,7 +1005,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -1022,7 +1022,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -1039,7 +1039,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
@@ -1056,7 +1056,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-             top: {symbols : null},
+                          rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},
