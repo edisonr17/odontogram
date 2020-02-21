@@ -43,7 +43,7 @@
                   if (x != null && y != null) {
                       if(quadrantObject.teeths[start] != undefined)
                       {
-                        this.drawTeeth(x, y, quadrantObject.teeths[start], quadrantName;
+                        this.drawTeeth(x, y, quadrantObject.teeths[start], quadrantName);
 
                       }
                   }
