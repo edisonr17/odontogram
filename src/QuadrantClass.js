@@ -1,7 +1,8 @@
   class QuadrantClass extends TeethClass {
 
 
-      drawCuadrant(xmax, ymax, quadrant, type, anchoCuadrante1, altoCuadrante1, quadrantObject) {
+      drawCuadrant(xmax, ymax, quadrant, type, anchoCuadrante1, altoCuadrante1, quadrantName) {
+          var quadrantObject = this.getTeethsByQuadrant(quadrantName);
           for (var k = 1; k < 9; k++) {
               var x = null;
               var y = null;
@@ -9,7 +10,6 @@
                   var start = k;
                   switch (quadrant) {
                       case 1:
-
                           if (k > 3) {
                               x = (anchoCuadrante1 / 8 * k) - ((anchoCuadrante1 / 8) * 0.5);
                               y = altoCuadrante1 + altoCuadrante1 * 0.25;
@@ -43,7 +43,7 @@
                   if (x != null && y != null) {
                       if(quadrantObject.teeths[start] != undefined)
                       {
-                        this.drawTeeth(x, y, quadrantObject.teeths[start]);
+                        this.drawTeeth(x, y, quadrantObject.teeths[start], quadrantName;
 
                       }
                   }
@@ -80,7 +80,7 @@
 
                   if (x != null && y != null) {
                    
-                      this.drawTeeth(x, y, quadrantObject.teeths[k-1]);
+                      this.drawTeeth(x, y, quadrantObject.teeths[k-1], quadrantName);
                   }
               }
 

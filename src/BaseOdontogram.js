@@ -56,7 +56,17 @@ class BaseOdontogram {
    */
 
 
+  findInTeethObject(quadrant, idTeeth)
+  {
+    this.odontogramObject[quadrant].foreach(function(teethValue, index){
+      console.log(teethValue);
+    });
+  }
 
+  updateTeethObject(quadrant, Object)
+  {
+
+  }
 
 
 
@@ -194,11 +204,11 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-                          rx: {symbols:null},top: {symbols : null},
-             left: {symbols : null},
-             down: {symbols : null},
-             right: {symbols : null},
-             center: {symbols : null},
+            rx: {symbols:null},top: {symbols : null},
+            left: {symbols : null},
+            down: {symbols : null},
+            right: {symbols : null},
+            center: {symbols : null},
          borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
                 status: false, symbol:null
@@ -440,11 +450,11 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-                          rx: {symbols:null},top: {symbols : null},
-             left: {symbols : null},
-             down: {symbols : null},
-             right: {symbols : null},
-             center: {symbols : null},
+            rx: {symbols:null},top: {symbols : null},
+            left: {symbols : null},
+            down: {symbols : null},
+            right: {symbols : null},
+            center: {symbols : null},
          borderTop :{symbols : null}, borderBottom: {symbols:null}, 
               fullTeeth: {
                 status: false, symbol:null
@@ -917,7 +927,7 @@ class BaseOdontogram {
             type: "",
             position: "",
             sections: {
-                          rx: {symbols:null},top: {symbols : null},
+            rx: {symbols:null},top: {symbols : null},
              left: {symbols : null},
              down: {symbols : null},
              right: {symbols : null},

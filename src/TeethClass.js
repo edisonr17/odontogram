@@ -45,7 +45,7 @@ class TeethClass extends BaseOdontogram {
 
 
 
-  drawTeeth(x, y, teeth) {
+  drawTeeth(x, y, teeth, quadrantName) {
     var background = this.getInstanceImageBackground(this.getCurrentBackground());
     var symbol = this.getCurrentSymbol();
     var group = this.getGroup(teeth);
@@ -115,8 +115,6 @@ class TeethClass extends BaseOdontogram {
               center.moveToTop();
             }
 
-
-
             if (symbol.validations.onlyFace == true) {
               var face = this.find('#top' + teeth.id);
               face.moveToTop();
@@ -127,7 +125,6 @@ class TeethClass extends BaseOdontogram {
               face = this.find('#bottom' + teeth.id);
               face.moveToTop();
             }
-
 
             if (symbol.validations.onlyTopBorder == true) {
               var face = this.find('#top' + teeth.id);
