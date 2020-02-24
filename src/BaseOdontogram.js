@@ -155,7 +155,7 @@ class BaseOdontogram {
       message: "No se puede aplicar",
       id: null,
     };
-    console.log(teeth);
+    if(symbol == null){return false;}
     if(symbol.validations.fullTeeth == true ){
       if(teeth.sections.top.symbols == null && 
         teeth.sections.right.symbols == null && 
@@ -169,13 +169,101 @@ class BaseOdontogram {
         response.id ="#fullteeth"+teeth.id;
       }
     }
+    else
+    {
 
+
+    }
+    return response;
+  }
+
+
+  validationsSymbolOnTopOrBottom(teeth, symbol, face) {
+    var response = {
+      canClick: false,
+      message: "No se puede aplicar",
+      id: null,
+    };
+    if(symbol == null){return false;}
+
+    if(symbol.validations.onlyTopBorder == true  && face == "borderTop"){
+      if(teeth.sections.borderTop.symbols == null )
+      {
+        response.canClick =true;
+        response.message="Se puede clickar";
+        response.id =face+teeth.id;
+      }
+    }
+    else
+    {
+      if(symbol.validations.onlyBottomBorder == true  && face == "borderBottom"){
+        if(teeth.sections.borderBottom.symbols == null )
+        {
+          response.canClick =true;
+          response.message="Se puede clickar";
+          response.id =face+teeth.id;
+        }
+      }
+
+    }
+    return response;
+  }
+
+
+
+  validationsSymbolOnFace(teeth, symbol, face) {
+    var response = {
+      canClick: false,
+      message: "No se puede aplicar",
+      id: null,
+    };
+    if(symbol == null){return false;}
+
+    if(symbol.validations.fullTeeth == false && 
+      symbol.validations.onlyCenter == false &&
+      symbol.validations.isEraser == false &&
+      symbol.validations.isRx == false &&
+      symbol.validations.onlyTopBorder == false && 
+      symbol.validations.onlyBottomBorder == false &&
+      teeth.sections[face].symbols == null)
+      {
+        response.canClick =true;
+        response.message="Se puede clickar";
+        response.id =face+teeth.id;
+      }
     
 
+  
     return response;
 
   }
 
+  validationsSymbolOnCenter(teeth, symbol) {
+    if(symbol == null){return false;}
+
+    var response = {
+      canClick: false,
+      message: "No se puede aplicar",
+      id: null,
+    };
+    if(symbol.validations.fullTeeth == false && 
+      symbol.validations.onlyFace == false &&
+      symbol.validations.isEraser == false &&
+      symbol.validations.isRx == false &&
+      symbol.validations.onlyTopBorder == false && 
+      symbol.validations.onlyBottomBorder == false &&
+      teeth.sections.center.symbols == null)
+      {
+        response.canClick =true;
+        response.message="Se puede clickar";
+        response.id ="#center"+teeth.id;
+      }
+    
+
+  
+    return response;
+
+  }
 
 
 
@@ -199,7 +287,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -235,7 +323,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -271,7 +359,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -307,7 +395,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -343,7 +431,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -379,7 +467,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -415,7 +503,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -451,7 +539,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -491,7 +579,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -527,7 +615,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -563,7 +651,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -599,7 +687,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -635,7 +723,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -671,7 +759,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -707,7 +795,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -743,7 +831,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -783,7 +871,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -819,7 +907,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -855,7 +943,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -891,7 +979,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -927,7 +1015,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -963,7 +1051,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -999,7 +1087,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1035,7 +1123,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1075,7 +1163,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1111,7 +1199,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1147,7 +1235,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1183,7 +1271,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1219,7 +1307,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1255,7 +1343,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1291,7 +1379,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1327,7 +1415,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1381,7 +1469,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1417,7 +1505,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1453,7 +1541,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1489,7 +1577,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1525,7 +1613,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1568,7 +1656,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1604,7 +1692,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1640,7 +1728,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1676,7 +1764,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1712,7 +1800,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1751,7 +1839,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1787,7 +1875,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1823,7 +1911,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1859,7 +1947,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1895,7 +1983,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1934,7 +2022,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -1970,7 +2058,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -2006,7 +2094,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -2042,7 +2130,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {
@@ -2078,7 +2166,7 @@ class BaseOdontogram {
               left: {
                 symbols: null
               },
-              down: {
+              bottom: {
                 symbols: null
               },
               right: {

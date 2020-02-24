@@ -538,14 +538,14 @@
                   id: 6,
                   name: "poroso",
                   validations: {
-                      fullTeeth: true,
+                      fullTeeth: false,
                       onlyCenter: false,
-                      onlyFace: false, isEraser: false, isRx :false,
+                      onlyFace: false, isEraser: true, isRx :false,
                       onlyTopBorder: false, onlyBottomBorder:false
                   },
                   src: "./resources/symbols/marcas/ImagenBorrador.png",
                   srcIcon: "./resources/symbols/marcas/Imagen33_icon.png",
-                  tittle: "Poroso 4"
+                  tittle: "Borrador"
               },
               {
                   id: 6,
